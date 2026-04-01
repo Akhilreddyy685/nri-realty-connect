@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NRI Realty Connect — Invest in India from Anywhere in the World</title>
+  <meta name="description" content="Premium property platform for NRIs. Buy, sell, rent and manage properties in Telangana & Andhra Pradesh. Zero brokerage, verified listings, virtual tours, BuildMyHome™ construction service.">
+  <meta property="og:title" content="NRI Realty Connect — Your Trusted NRI Property Partner">
+  <meta property="og:description" content="Invest in India from anywhere. Verified properties, zero brokerage, legal support.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
+</head>
+<body>
+  <!-- LOADER -->
+  <div class="page-loader" id="pageLoader"><div class="loader-spinner"></div></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#home" class="nav-logo">
+        <div class="nav-logo-icon">NR</div>
+        <div class="nav-logo-text">NRI Realty<span>Connect</span></div>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#home" class="active" data-page="home">Home</a>
+        <a href="#properties" data-page="properties">Properties</a>
+        <a href="#buildmyhome" data-page="buildmyhome">BuildMyHome™</a>
+        <a href="#services" data-page="services">NRI Services</a>
+        <a href="#about" data-page="about">About Us</a>
+        <a href="#contact" data-page="contact">Contact</a>
+      </div>
+      <a href="#contact" class="nav-cta">Get Started</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ==================== HOME PAGE ==================== -->
+  <div class="page active" id="page-home">
+    <!-- HERO -->
+    <section class="hero" id="hero-section">
+      <div class="hero-bg" style="background-image:url('images/hero-cityscape.png')"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-particles" id="heroParticles"></div>
+      <div class="hero-content">
+        <div class="hero-badge"><span class="dot"></span> Trusted by 5,000+ NRIs Worldwide</div>
+        <h1>Invest in <span class="highlight">India</span> from Anywhere in the World</h1>
+        <p class="hero-subtitle">Your trusted partner for buying, selling, renting, and constructing properties across Telangana & Andhra Pradesh — with zero brokerage and complete transparency.</p>
+        <div class="hero-search">
+          <div class="search-tabs">
+            <button class="search-tab active" data-type="buy">Buy</button>
+            <button class="search-tab" data-type="rent">Rent</button>
+            <button class="search-tab" data-type="sell">Sell</button>
+            <button class="search-tab" data-type="build">BuildMyHome™</button>
+          </div>
+          <div class="search-bar">
+            <input type="text" id="heroSearchInput" placeholder="Search by city, locality, or project...">
+            <select id="heroSearchType">
+              <option value="">Property Type</option>
+              <option>Apartment</option>
+              <option>Villa</option>
+              <option>Independent House</option>
+              <option>Plot / Land</option>
+              <option>Commercial</option>
+            </select>
+            <button class="search-btn" id="heroSearchBtn">🔍 Search</button>
+          </div>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><div class="hero-stat-value" data-count="2500">0</div><div class="hero-stat-label">Properties Listed</div></div>
+          <div class="hero-stat"><div class="hero-stat-value" data-count="5000">0</div><div class="hero-stat-label">Happy NRI Clients</div></div>
+          <div class="hero-stat"><div class="hero-stat-value" data-count="45">0</div><div class="hero-stat-label">Cities Covered</div></div>
+          <div class="hero-stat"><div class="hero-stat-value" data-count="8">0</div><div class="hero-stat-label">Years of Trust</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section" id="features-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-badge">Why Choose Us</span>
+          <h2 class="section-title">Everything an NRI Needs,<br>Under One Roof</h2>
+          <p class="section-subtitle">We eliminate the stress of remote property management with end-to-end verified services.</p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card reveal">
+            <div class="feature-icon">✅</div>
+            <h3>100% Verified Listings</h3>
+            <p>Every property is physically verified by our team. RERA-compliant documentation and ownership checks included.</p>
+          </div>
+          <div class="feature-card reveal">
+            <div class="feature-icon">🎥</div>
+            <h3>Virtual Tours & Video Visits</h3>
+            <p>Experience properties from anywhere via HD video tours, live video calls with our on-ground agents, and 360° walkthroughs.</p>
+          </div>
+          <div class="feature-card reveal">
+            <div class="feature-icon">⚖️</div>
+            <h3>Legal & Tax Advisory</h3>
+            <p>Expert guidance on DTAA benefits, repatriation rules, Power of Attorney, and NRI-specific tax planning.</p>
+          </div>
+          <div class="feature-card reveal">
+            <div class="feature-icon">₹0</div>
+            <h3>Zero Brokerage</h3>
+            <p>No hidden commissions. We connect you directly with verified owners and charge a transparent flat service fee.</p>
+          </div>
+          <div class="feature-card reveal">
+            <div class="feature-icon">🏗️</div>
+            <h3>BuildMyHome™ Construction</h3>
+            <p>Own a plot? We build your dream home on it — with live progress updates, video inspections, and quality guarantees.</p>
+          </div>
+          <div class="feature-card reveal">
+            <div class="feature-icon">🤝</div>
+            <h3>Dedicated NRI Manager</h3>
+            <p>A personal relationship manager handles everything — from property shortlisting to registration and key handover.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BUILDMYHOME HIGHLIGHT -->
+    <section class="section buildmyhome-section" id="buildmyhome-highlight">
+      <div class="container">
+        <div class="buildmyhome-grid">
+          <div class="buildmyhome-content reveal-left">
+            <div class="buildmyhome-badge">⭐ Exclusive NRI Service</div>
+            <h2>BuildMyHome<span>™</span></h2>
+            <p class="buildmyhome-tagline">"Your Plot, Our Expertise"</p>
+            <p>Own a plot in Telangana or Andhra Pradesh? Let us build your dream home while you stay abroad. From architectural design to final handover, we manage the entire construction process with full transparency — weekly video updates, material quality reports, and on-time delivery guarantees.</p>
+            <div class="buildmyhome-features">
+              <div class="bmh-feature"><span class="bmh-feature-icon">📐</span><span>Custom Architecture</span></div>
+              <div class="bmh-feature"><span class="bmh-feature-icon">📹</span><span>Weekly Video Updates</span></div>
+              <div class="bmh-feature"><span class="bmh-feature-icon">🔍</span><span>Quality Inspections</span></div>
+              <div class="bmh-feature"><span class="bmh-feature-icon">📋</span><span>Govt. Approvals</span></div>
+              <div class="bmh-feature"><span class="bmh-feature-icon">💰</span><span>Transparent Pricing</span></div>
+              <div class="bmh-feature"><span class="bmh-feature-icon">🔑</span><span>Key Handover</span></div>
+            </div>
+            <div style="display:flex;gap:16px;flex-wrap:wrap">
+              <a href="#buildmyhome" class="btn-accent">Explore BuildMyHome™ →</a>
+              <a href="#contact" class="btn-white-outline">Get a Free Estimate</a>
+            </div>
+          </div>
+          <div class="buildmyhome-image reveal-right">
+            <img src="images/buildmyhome.png" alt="BuildMyHome Construction">
+            <div class="bmh-stats">
+              <div class="bmh-stats-value">150+</div>
+              <div class="bmh-stats-label">Homes Built for NRIs</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section" style="background:#fff">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-badge">How It Works</span>
+          <h2 class="section-title">Your Property Journey,<br>Simplified</h2>
+        </div>
+        <div class="steps-grid">
+          <div class="step-card reveal"><div class="step-number">1</div><h3>Tell Us What You Need</h3><p>Share your requirements — buying, renting, selling, or building. Our NRI specialist will connect within 24 hours.</p></div>
+          <div class="step-card reveal"><div class="step-number">2</div><h3>Explore & Verify</h3><p>Get curated property matches with virtual tours, legal verification reports, and transparent pricing.</p></div>
+          <div class="step-card reveal"><div class="step-number">3</div><h3>Secure & Close</h3><p>Complete documentation, digital payments, and registration. We handle everything until key handover.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PROPERTIES -->
+    <section class="section" id="featured-properties">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-badge">Featured Properties</span>
+          <h2 class="section-title">Handpicked Investments in<br>Telangana & Andhra Pradesh</h2>
+          <p class="section-subtitle">Verified premium properties selected by our NRI investment experts.</p>
+        </div>
+        <div class="properties-grid" id="featuredPropertiesGrid"></div>
+        <div style="text-align:center;margin-top:40px" class="reveal">
+          <a href="#properties" class="btn-accent">View All Properties →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CITIES -->
+    <section class="section" style="background:#fff">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-badge">Explore Locations</span>
+          <h2 class="section-title">Properties Across<br>Telangana & Andhra Pradesh</h2>
+        </div>
+        <div class="cities-grid" id="citiesGrid"></div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section testimonials-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-badge" style="border-color:rgba(200,169,110,0.3);color:var(--accent)">Client Stories</span>
+          <h2 class="section-title">Trusted by NRIs<br>Around the Globe</h2>
+          <p class="section-subtitle">Real experiences from NRI families who found their perfect property with us.</p>
+        </div>
+        <div class="testimonials-carousel reveal">
+          <div class="testimonials-track" id="testimonialsTrack"></div>
+          <div class="testimonial-dots" id="testimonialDots"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta-section">
+      <div class="container">
+        <div class="cta-content reveal">
+          <h2>Start Your Property Journey Today</h2>
+          <p>Whether you're buying your first home or building on your own plot, we're here to make it seamless.</p>
+          <div class="cta-buttons">
+            <a href="#properties" class="btn-accent">Browse Properties</a>
+            <a href="#buildmyhome" class="btn-white-outline">Explore BuildMyHome™</a>
+            <a href="#contact" class="btn-white-outline">Talk to an Expert</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ==================== PROPERTIES PAGE ==================== -->
+  <div class="page" id="page-properties">
+    <section style="padding-top:100px">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Property Listings</span>
+          <h2 class="section-title">Find Your Perfect Property</h2>
+          <p class="section-subtitle">Browse verified listings across Telangana & Andhra Pradesh</p>
+        </div>
+        <div class="filters-bar" id="filtersBar">
+          <div class="filters-row">
+            <div class="filter-group">
+              <label>State</label>
+              <select id="filterState"><option value="">All States</option><option>Telangana</option><option>Andhra Pradesh</option></select>
+            </div>
+            <div class="filter-group">
+              <label>City</label>
+              <select id="filterCity"><option value="">All Cities</option></select>
+            </div>
+            <div class="filter-group">
+              <label>Property Type</label>
+              <select id="filterType"><option value="">All Types</option><option>Apartment</option><option>Villa</option><option>Independent House</option><option>Plot / Land</option><option>Commercial</option></select>
+            </div>
+            <div class="filter-group">
+              <label>Budget (₹)</label>
+              <select id="filterBudget"><option value="">Any Budget</option><option value="0-3000000">Up to 30 Lakhs</option><option value="3000000-5000000">30-50 Lakhs</option><option value="5000000-10000000">50 Lakhs - 1 Cr</option><option value="10000000-30000000">1 Cr - 3 Cr</option><option value="30000000-999999999">3 Cr+</option></select>
+            </div>
+            <div class="filter-group">
+              <label>Listing</label>
+              <select id="filterListing"><option value="">Buy / Rent</option><option>Buy</option><option>Rent</option></select>
+            </div>
+            <button class="search-btn filter-btn" id="applyFilters">Apply Filters</button>
+          </div>
+        </div>
+        <div class="properties-grid" id="allPropertiesGrid"></div>
+        <p id="noResults" style="display:none;text-align:center;padding:40px;color:var(--text-secondary);font-size:1.1rem;">No properties match your filters. Try adjusting your criteria.</p>
+      </div>
+    </section>
+  </div>
+
+  <!-- ==================== BUILDMYHOME PAGE ==================== -->
+  <div class="page" id="page-buildmyhome">
+    <section class="hero" style="min-height:70vh">
+      <div class="hero-bg" style="background-image:url('images/buildmyhome.png')"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="hero-badge"><span class="dot"></span> Exclusive NRI Construction Service</div>
+        <h1>BuildMyHome<span class="highlight">™</span></h1>
+        <p class="hero-subtitle" style="font-family:var(--font-display);font-size:1.3rem;color:var(--accent-light)">"Your Plot, Our Expertise"</p>
+        <p class="hero-subtitle">Own land in Telangana or Andhra Pradesh? We design, approve, construct, and deliver your dream home while you stay abroad. Complete transparency with weekly video reports.</p>
+        <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+          <a href="#contact" class="btn-accent">Get Free Consultation →</a>
+          <a href="#" class="btn-white-outline" onclick="showToast('Our team will call you within 24 hours!');return false;">Request Callback</a>
+        </div>
+      </div>
+    </section>
+    <section class="section" style="background:#fff">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-badge">The Process</span>
+          <h2 class="section-title">How BuildMyHome™ Works</h2>
+          <p class="section-subtitle">A transparent 6-step journey from blueprint to key handover</p>
+        </div>
+        <div class="features-grid" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr))">
+          <div class="feature-card reveal"><div class="feature-icon">📞</div><h3>1. Consultation Call</h3><p>Share your plot details, vision, and budget. Our architect team creates a custom proposal within 7 days.</p></div>
+          <div class="feature-card reveal"><div class="feature-icon">📐</div><h3>2. Design & Planning</h3><p>Get 3D renders, floor plans, and material specifications. Revise until you're 100% satisfied.</p></div>
+          <div class="feature-card reveal"><div class="feature-icon">📋</div><h3>3. Approvals & Permits</h3><p>We handle all government approvals, building permits, and RERA compliance on your behalf.</p></div>
+          <div class="feature-card reveal"><div class="feature-icon">🏗️</div><h3>4. Construction Begins</h3><p>Our vetted contractors begin work. You receive weekly video updates and a live project dashboard.</p></div>
+          <div class="feature-card reveal"><div class="feature-icon">🔍</div><h3>5. Quality Inspections</h3><p>Independent third-party inspections at every milestone. Detailed reports shared with photos and videos.</p></div>
+          <div class="feature-card reveal"><div class="feature-icon">🔑</div><h3>6. Handover & Registry</h3><p>Final walkthrough via video, completion certificate, and property registration — all managed by us.</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-badge">Pricing</span>
+          <h2 class="section-title">Transparent Construction Packages</h2>
+        </div>
+        <div class="features-grid" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr))">
+          <div class="feature-card reveal" style="text-align:center;border-top:3px solid var(--border)">
+            <h3>Standard Build</h3>
+            <div style="font-family:var(--font-display);font-size:2rem;font-weight:700;color:var(--primary);margin:16px 0">₹1,650/sq ft</div>
+            <p>Quality construction with standard finishes. Ideal for residential homes up to 2,500 sq ft.</p>
+            <ul style="text-align:left;margin:20px 0;display:flex;flex-direction:column;gap:8px;font-size:0.9rem;color:var(--text-secondary)">
+              <li>✓ Structural design included</li><li>✓ Standard branded materials</li><li>✓ Monthly video updates</li><li>✓ 5-year structural warranty</li>
+            </ul>
+            <a href="#contact" class="btn-primary" style="display:block">Get Quote</a>
+          </div>
+          <div class="feature-card reveal" style="text-align:center;border-top:3px solid var(--accent)">
+            <div style="background:var(--accent);color:var(--primary);padding:4px 16px;border-radius:50px;font-size:0.75rem;font-weight:700;display:inline-block;margin-bottom:12px">MOST POPULAR</div>
+            <h3>Premium Build</h3>
+            <div style="font-family:var(--font-display);font-size:2rem;font-weight:700;color:var(--primary);margin:16px 0">₹2,200/sq ft</div>
+            <p>Premium finishes with smart home features. Perfect for luxury homes and modern villas.</p>
+            <ul style="text-align:left;margin:20px 0;display:flex;flex-direction:column;gap:8px;font-size:0.9rem;color:var(--text-secondary)">
+              <li>✓ 3D design + architecture</li><li>✓ Premium branded materials</li><li>✓ Weekly video updates</li><li>✓ Smart home wiring</li><li>✓ 10-year structural warranty</li>
+            </ul>
+            <a href="#contact" class="btn-accent" style="display:block;justify-content:center">Get Quote →</a>
+          </div>
+          <div class="feature-card reveal" style="text-align:center;border-top:3px solid var(--primary)">
+            <h3>Ultra Luxury</h3>
+            <div style="font-family:var(--font-display);font-size:2rem;font-weight:700;color:var(--primary);margin:16px 0">₹3,500+/sq ft</div>
+            <p>Bespoke architecture with international-grade materials and finishes. No compromises.</p>
+            <ul style="text-align:left;margin:20px 0;display:flex;flex-direction:column;gap:8px;font-size:0.9rem;color:var(--text-secondary)">
+              <li>✓ Celebrity architect design</li><li>✓ Imported materials</li><li>✓ Daily video updates</li><li>✓ Full smart home automation</li><li>✓ Lifetime structural warranty</li>
+            </ul>
+            <a href="#contact" class="btn-primary" style="display:block">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ==================== SERVICES PAGE ==================== -->
+  <div class="page" id="page-services">
+    <section style="padding-top:100px">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">NRI Services</span>
+          <h2 class="section-title">Complete Property Solutions<br>for NRIs</h2>
+          <p class="section-subtitle">End-to-end support designed specifically for Non-Resident Indians.</p>
+        </div>
+        <div class="services-tabs" id="servicesTabs">
+          <button class="service-tab active" data-service="buying">🏠 Buying</button>
+          <button class="service-tab" data-service="selling">💰 Selling</button>
+          <button class="service-tab" data-service="renting">🔑 Renting & Management</button>
+          <button class="service-tab" data-service="legal">⚖️ Legal & Tax</button>
+        </div>
+        <!-- Buying -->
+        <div class="service-content active" id="service-buying">
+          <div class="service-detail-grid">
+            <div class="service-detail-content">
+              <h3>Buying Property as an NRI</h3>
+              <p>We make property buying seamless with NRI home loan assistance, thorough verification, and complete documentation support — so you can invest confidently from abroad.</p>
+              <div class="service-steps">
+                <div class="service-step"><div class="service-step-num">1</div><div><h4>Requirement Analysis</h4><p>Share your investment goals & budget. We curate matching properties.</p></div></div>
+                <div class="service-step"><div class="service-step-num">2</div><div><h4>Virtual Property Tours</h4><p>HD video walkthroughs and live video calls from the property site.</p></div></div>
+                <div class="service-step"><div class="service-step-num">3</div><div><h4>Legal Verification</h4><p>Title check, RERA verification, encumbrance certificate review.</p></div></div>
+                <div class="service-step"><div class="service-step-num">4</div><div><h4>NRI Home Loan</h4><p>Partnership with SBI, HDFC, ICICI for NRI-specific home loan products.</p></div></div>
+                <div class="service-step"><div class="service-step-num">5</div><div><h4>Registration & Handover</h4><p>POA-based registration, documentation, and key handover.</p></div></div>
+              </div>
+            </div>
+            <div class="service-image-placeholder"><img src="images/property-luxury.png" alt="Buying property"></div>
+          </div>
+        </div>
+        <!-- Selling -->
+        <div class="service-content" id="service-selling">
+          <div class="service-detail-grid">
+            <div class="service-detail-content">
+              <h3>Selling Your Property from Abroad</h3>
+              <p>List and sell your property without traveling to India. We handle market valuation, listing, buyer screening, negotiation, and complete registration.</p>
+              <div class="service-steps">
+                <div class="service-step"><div class="service-step-num">1</div><div><h4>Free Market Valuation</h4><p>AI-powered pricing + expert on-ground assessment.</p></div></div>
+                <div class="service-step"><div class="service-step-num">2</div><div><h4>Professional Listing</h4><p>HD photography, virtual tour creation, premium listing.</p></div></div>
+                <div class="service-step"><div class="service-step-num">3</div><div><h4>Buyer Screening</h4><p>Verified buyer matching with background checks.</p></div></div>
+                <div class="service-step"><div class="service-step-num">4</div><div><h4>Negotiation & Closure</h4><p>Expert negotiation, legal documentation, registration via POA.</p></div></div>
+              </div>
+            </div>
+            <div class="service-image-placeholder"><img src="images/property-apartment.png" alt="Selling property"></div>
+          </div>
+        </div>
+        <!-- Renting -->
+        <div class="service-content" id="service-renting">
+          <div class="service-detail-grid">
+            <div class="service-detail-content">
+              <h3>Renting & Property Management</h3>
+              <p>Leave your property in expert hands. From tenant finding to rent collection, maintenance to legal compliance — we manage everything while you stay abroad.</p>
+              <div class="service-steps">
+                <div class="service-step"><div class="service-step-num">1</div><div><h4>Tenant Discovery</h4><p>Background-verified tenant shortlisting and screening.</p></div></div>
+                <div class="service-step"><div class="service-step-num">2</div><div><h4>Rental Agreement</h4><p>Legally compliant agreement creation and registration.</p></div></div>
+                <div class="service-step"><div class="service-step-num">3</div><div><h4>Rent Collection</h4><p>Automated monthly rent collection and direct bank transfer.</p></div></div>
+                <div class="service-step"><div class="service-step-num">4</div><div><h4>Maintenance & Reports</h4><p>Periodic property inspections, repair coordination, monthly reports.</p></div></div>
+              </div>
+            </div>
+            <div class="service-image-placeholder"><img src="images/property-villa.png" alt="Property management"></div>
+          </div>
+        </div>
+        <!-- Legal -->
+        <div class="service-content" id="service-legal">
+          <div class="service-detail-grid">
+            <div class="service-detail-content">
+              <h3>Legal & Tax Advisory for NRIs</h3>
+              <p>Navigate India's property laws with confidence. Our legal experts specialize in NRI property regulations, DTAA benefits, and tax-efficient investing.</p>
+              <div class="service-steps">
+                <div class="service-step"><div class="service-step-num">📜</div><div><h4>DTAA Benefits</h4><p>Claim Double Taxation Avoidance Agreement benefits across 90+ countries.</p></div></div>
+                <div class="service-step"><div class="service-step-num">💸</div><div><h4>Repatriation Rules</h4><p>Expert guidance on selling proceeds repatriation under FEMA regulations.</p></div></div>
+                <div class="service-step"><div class="service-step-num">📝</div><div><h4>Power of Attorney</h4><p>POA drafting, attestation guidance for Indian consulates worldwide.</p></div></div>
+                <div class="service-step"><div class="service-step-num">🏛️</div><div><h4>Property Registration</h4><p>Complete registration support including stamp duty optimization.</p></div></div>
+              </div>
+            </div>
+            <div class="service-image-placeholder" style="background:linear-gradient(135deg,#0A1F3F,#1A3A5C);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:20px;padding:40px">
+              <div style="font-size:64px">⚖️</div>
+              <div style="color:var(--accent);font-family:var(--font-display);font-size:1.5rem;text-align:center">Expert Legal Advisory<br>for NRI Property Matters</div>
+            </div>
+          </div>
+        </div>
+        <!-- FAQ -->
+        <div style="margin-top:80px">
+          <div class="section-header reveal">
+            <span class="section-badge">FAQ</span>
+            <h2 class="section-title">Frequently Asked Questions</h2>
+          </div>
+          <div class="faq-list" id="faqList"></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ==================== ABOUT PAGE ==================== -->
+  <div class="page" id="page-about">
+    <section style="padding-top:100px">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">About Us</span>
+          <h2 class="section-title">Building Trust,<br>One Home at a Time</h2>
+          <p class="section-subtitle">NRI Realty Connect was founded with a single mission: to make property investment in India as easy and transparent as investing locally.</p>
+        </div>
+        <!-- Timeline -->
+        <div class="timeline reveal">
+          <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><span class="year">2018</span><h4>Founded in Hyderabad</h4><p>Started with a vision to help NRIs invest in Telangana properties with zero brokerage.</p></div></div>
+          <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><span class="year">2019</span><h4>Expanded to AP</h4><p>Extended services across Andhra Pradesh — Visakhapatnam, Vijayawada, and Guntur.</p></div></div>
+          <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><span class="year">2020</span><h4>Virtual Tours Launch</h4><p>Launched HD virtual tour technology — demand surged 300% during the pandemic.</p></div></div>
+          <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><span class="year">2022</span><h4>BuildMyHome™ Launched</h4><p>Introduced our flagship construction service for NRIs who own plots in India.</p></div></div>
+          <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><span class="year">2024</span><h4>5,000+ Happy NRIs</h4><p>Crossed 5,000 satisfied NRI clients across 25+ countries worldwide.</p></div></div>
+          <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><span class="year">2026</span><h4>AI-Powered Platform</h4><p>Next-gen property matching with AI recommendations and instant legal document processing.</p></div></div>
+        </div>
+        <!-- Trust Badges -->
+        <div class="trust-badges reveal">
+          <div class="trust-badge"><div class="trust-badge-icon">🏛️</div><div><h4>RERA Registered</h4><p>Fully compliant</p></div></div>
+          <div class="trust-badge"><div class="trust-badge-icon">🏆</div><div><h4>ISO 9001:2015</h4><p>Quality certified</p></div></div>
+          <div class="trust-badge"><div class="trust-badge-icon">🔒</div><div><h4>Secure Payments</h4><p>256-bit encryption</p></div></div>
+          <div class="trust-badge"><div class="trust-badge-icon">🌍</div><div><h4>25+ Countries</h4><p>NRI clients served</p></div></div>
+        </div>
+        <!-- Mission/Vision -->
+        <div class="features-grid" style="margin-top:60px">
+          <div class="feature-card reveal" style="text-align:center">
+            <div class="feature-icon" style="margin:0 auto 20px">🎯</div>
+            <h3>Our Mission</h3>
+            <p>To empower NRIs with a transparent, trustworthy, and technology-driven property platform that eliminates distance as a barrier to investing in India.</p>
+          </div>
+          <div class="feature-card reveal" style="text-align:center">
+            <div class="feature-icon" style="margin:0 auto 20px">🔭</div>
+            <h3>Our Vision</h3>
+            <p>To become India's most trusted NRI property platform — where every transaction is verified, every process is transparent, and every client feels at home.</p>
+          </div>
+          <div class="feature-card reveal" style="text-align:center">
+            <div class="feature-icon" style="margin:0 auto 20px">💎</div>
+            <h3>Our Values</h3>
+            <p>Transparency in pricing. Integrity in verification. Excellence in service. Innovation in technology. Above all, trust in every interaction.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ==================== CONTACT PAGE ==================== -->
+  <div class="page" id="page-contact">
+    <section style="padding-top:100px">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Contact Us</span>
+          <h2 class="section-title">Let's Start Your<br>Property Journey</h2>
+          <p class="section-subtitle">Reach out to our NRI specialists for personalized assistance.</p>
+        </div>
+        <div class="contact-grid">
+          <div>
+            <form id="contactForm">
+              <div class="form-grid">
+                <div class="form-group"><label>Full Name *</label><input type="text" id="contactName" placeholder="Your full name" required></div>
+                <div class="form-group"><label>Email *</label><input type="email" id="contactEmail" placeholder="your@email.com" required></div>
+                <div class="form-group"><label>Phone (with country code) *</label><input type="tel" id="contactPhone" placeholder="+1 234 567 8900" required></div>
+                <div class="form-group"><label>Country of Residence</label>
+                  <select id="contactCountry"><option value="">Select Country</option><option>United States</option><option>United Kingdom</option><option>UAE</option><option>Singapore</option><option>Australia</option><option>Canada</option><option>Germany</option><option>Saudi Arabia</option><option>Qatar</option><option>Kuwait</option><option>Other</option></select>
+                </div>
+                <div class="form-group"><label>I'm Interested In</label>
+                  <select id="contactInterest"><option value="">Select Interest</option><option>Buying Property</option><option>Selling Property</option><option>Renting Property</option><option>Property Management</option><option>BuildMyHome™ Construction</option><option>Legal & Tax Advisory</option><option>NRI Home Loan</option></select>
+                </div>
+                <div class="form-group"><label>Preferred City</label>
+                  <select id="contactCity"><option value="">Select City</option><option>Hyderabad</option><option>Warangal</option><option>Nizamabad</option><option>Karimnagar</option><option>Visakhapatnam</option><option>Vijayawada</option><option>Guntur</option><option>Tirupati</option><option>Other</option></select>
+                </div>
+                <div class="form-group full-width"><label>Message</label><textarea id="contactMessage" placeholder="Tell us about your requirements..."></textarea></div>
+                <div class="form-group full-width"><button type="submit" class="btn-accent" style="width:100%;justify-content:center;padding:14px">Send Inquiry →</button></div>
+              </div>
+            </form>
+          </div>
+          <div class="contact-info-cards">
+            <div class="contact-info-card"><div class="contact-info-icon">📞</div><div><h4>Call Us (India)</h4><p>+91 40 1234 5678<br>Mon-Sat, 9 AM - 8 PM IST</p></div></div>
+            <div class="contact-info-card"><div class="contact-info-icon">📧</div><div><h4>Email Us</h4><p>hello@nrirealtyconnect.com<br>nri@nrirealtyconnect.com</p></div></div>
+            <div class="contact-info-card"><div class="contact-info-icon">📍</div><div><h4>Head Office</h4><p>Financial District, Gachibowli<br>Hyderabad, Telangana 500032</p></div></div>
+            <div class="contact-info-card"><div class="contact-info-icon">🏢</div><div><h4>Branch Office</h4><p>Rushikonda IT Hub<br>Visakhapatnam, AP 530045</p></div></div>
+            <a href="https://wa.me/919876543210?text=Hi%20NRI%20Realty%20Connect%2C%20I%27m%20interested%20in%20property%20services" target="_blank" class="whatsapp-btn">💬 Chat on WhatsApp</a>
+            <button class="btn-outline" style="width:100%;margin-top:8px" onclick="showToast('Callback request received! We will call you within 2 hours.')">📞 Request Callback</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#home" class="nav-logo"><div class="nav-logo-icon">NR</div><div class="nav-logo-text">NRI Realty<span>Connect</span></div></a>
+          <p>Your trusted partner for property investment, management, and construction in Telangana & Andhra Pradesh. Zero brokerage. 100% transparency.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Twitter">𝕏</a><a href="#" aria-label="Instagram">📷</a><a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="YouTube">▶</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <a href="#home">Home</a><a href="#properties">Properties</a><a href="#buildmyhome">BuildMyHome™</a><a href="#services">NRI Services</a><a href="#about">About Us</a><a href="#contact">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="#services">Buy Property</a><a href="#services">Sell Property</a><a href="#services">Rent & Manage</a><a href="#services">Legal Advisory</a><a href="#buildmyhome">Construction</a><a href="#services">NRI Home Loans</a>
+        </div>
+        <div class="footer-col">
+          <h4>Top Cities</h4>
+          <a href="#properties">Hyderabad</a><a href="#properties">Visakhapatnam</a><a href="#properties">Vijayawada</a><a href="#properties">Warangal</a><a href="#properties">Guntur</a><a href="#properties">Tirupati</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 NRI Realty Connect. All rights reserved.</span>
+        <span>RERA Registered | ISO 9001:2015 Certified</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
