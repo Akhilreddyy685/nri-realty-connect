@@ -22,36 +22,28 @@ const TELANGANA_CITIES = [
   'Miryalaguda','Jagtial','Mancherial','Kamareddy','Bhongir','Medak',
   'Sangareddy','Wanaparthy','Nirmal','Gadwal','Kothagudem'
 ];
-const AP_CITIES = [
-  'Visakhapatnam','Vijayawada','Guntur','Nellore','Kurnool','Tirupati',
-  'Rajahmundry','Kakinada','Anantapur','Eluru','Ongole','Kadapa',
-  'Vizianagaram','Machilipatnam','Tenali','Chittoor','Proddatur',
-  'Srikakulam','Nandyal','Hindupur','Amalapuram','Bhimavaram'
-];
-const ALL_CITIES = [...TELANGANA_CITIES, ...AP_CITIES];
+const AP_CITIES = [];
+const ALL_CITIES = [...TELANGANA_CITIES];
 
 const PROPERTIES = [
   { id:1, title:'Luxury 3 BHK Apartment in Gachibowli', type:'Apartment', bhk:'3 BHK', area:1850, price:12500000, priceLabel:'₹1.25 Cr', location:'Gachibowli, Hyderabad', state:'Telangana', city:'Hyderabad', image:'images/property-apartment.png', badge:'Verified', featured:true, listing:'Buy', amenities:['Pool','Gym','Parking','Garden'] },
   { id:2, title:'Modern Villa in Jubilee Hills', type:'Villa', bhk:'4 BHK', area:3200, price:45000000, priceLabel:'₹4.5 Cr', location:'Jubilee Hills, Hyderabad', state:'Telangana', city:'Hyderabad', image:'images/property-villa.png', badge:'Featured', featured:true, listing:'Buy', amenities:['Pool','Garden','Home Theater','Parking'] },
   { id:3, title:'Premium Plot in Shamshabad', type:'Plot / Land', bhk:'200 sq.yd', area:200, price:8000000, priceLabel:'₹80 Lakhs', location:'Shamshabad, Hyderabad', state:'Telangana', city:'Hyderabad', image:'images/property-plot.png', badge:'BuildMyHome™', featured:false, listing:'Buy', amenities:['Gated Community','Road Access'] },
-  { id:4, title:'Sea-View Apartment in Vizag', type:'Apartment', bhk:'3 BHK', area:1650, price:9500000, priceLabel:'₹95 Lakhs', location:'Rushikonda, Visakhapatnam', state:'Andhra Pradesh', city:'Visakhapatnam', image:'images/property-luxury.png', badge:'Verified', featured:true, listing:'Buy', amenities:['Sea View','Gym','Club House'] },
-  { id:5, title:'Independent House in Vijayawada', type:'Independent House', bhk:'4 BHK', area:2800, price:18000000, priceLabel:'₹1.8 Cr', location:'Moghalrajpuram, Vijayawada', state:'Andhra Pradesh', city:'Vijayawada', image:'images/property-villa.png', badge:'Verified', featured:false, listing:'Buy', amenities:['Parking','Garden','Terrace'] },
-  { id:6, title:'Commercial Space in HITEC City', type:'Commercial', bhk:'2500 sft', area:2500, price:35000000, priceLabel:'₹3.5 Cr', location:'HITEC City, Hyderabad', state:'Telangana', city:'Hyderabad', image:'images/property-apartment.png', badge:'Featured', featured:false, listing:'Buy', amenities:['24/7 Security','Power Backup','Parking'] },
+  { id:6, title:'Commercial Space in HITEC City', type:'Commercial', bhk:'2500 sft', area:2500, price:35000000, priceLabel:'₹3.5 Cr', location:'HITEC City, Hyderabad', state:'Telangana', city:'Hyderabad', image:'images/property-apartment.png', badge:'Featured', featured:true, listing:'Buy', amenities:['24/7 Security','Power Backup','Parking'] },
   { id:7, title:'Gated Villa Plot in Warangal', type:'Plot / Land', bhk:'267 sq.yd', area:267, price:4500000, priceLabel:'₹45 Lakhs', location:'Kazipet, Warangal', state:'Telangana', city:'Warangal', image:'images/property-plot.png', badge:'BuildMyHome™', featured:false, listing:'Buy', amenities:['Gated','Avenue Plantation'] },
   { id:8, title:'2 BHK Flat for Rent in Kondapur', type:'Apartment', bhk:'2 BHK', area:1200, price:28000, priceLabel:'₹28,000/mo', location:'Kondapur, Hyderabad', state:'Telangana', city:'Hyderabad', image:'images/property-luxury.png', badge:'Verified', featured:false, listing:'Rent', amenities:['Semi-Furnished','Gym','Parking'] },
-  { id:9, title:'3 BHK Apartment in Guntur', type:'Apartment', bhk:'3 BHK', area:1550, price:5500000, priceLabel:'₹55 Lakhs', location:'Brodipet, Guntur', state:'Andhra Pradesh', city:'Guntur', image:'images/property-apartment.png', badge:'Verified', featured:true, listing:'Buy', amenities:['Lift','Parking','Playground'] },
-  { id:10, title:'Luxury Villa in Tirupati', type:'Villa', bhk:'3 BHK', area:2400, price:15000000, priceLabel:'₹1.5 Cr', location:'Chandragiri Road, Tirupati', state:'Andhra Pradesh', city:'Tirupati', image:'images/property-villa.png', badge:'Verified', featured:false, listing:'Buy', amenities:['Pool','Garden','Vastu','Parking'] },
   { id:11, title:'Residential Plot in Nizamabad', type:'Plot / Land', bhk:'300 sq.yd', area:300, price:3500000, priceLabel:'₹35 Lakhs', location:'Armoor Road, Nizamabad', state:'Telangana', city:'Nizamabad', image:'images/property-plot.png', badge:'BuildMyHome™', featured:false, listing:'Buy', amenities:['DTCP Approved','Road Access'] },
   { id:12, title:'Penthouse in Banjara Hills', type:'Apartment', bhk:'4 BHK', area:4200, price:80000000, priceLabel:'₹8 Cr', location:'Banjara Hills, Hyderabad', state:'Telangana', city:'Hyderabad', image:'images/property-luxury.png', badge:'Featured', featured:true, listing:'Buy', amenities:['Terrace Pool','Concierge','Helipad'] },
-  { id:13, title:'3 BHK Villa in Kakinada', type:'Villa', bhk:'3 BHK', area:2100, price:7500000, priceLabel:'₹75 Lakhs', location:'Surya Rao Peta, Kakinada', state:'Andhra Pradesh', city:'Kakinada', image:'images/property-villa.png', badge:'Verified', featured:false, listing:'Buy', amenities:['Garden','Parking','Modular Kitchen'] },
   { id:14, title:'Furnished 2BHK in Madhapur', type:'Apartment', bhk:'2 BHK', area:1100, price:35000, priceLabel:'₹35,000/mo', location:'Madhapur, Hyderabad', state:'Telangana', city:'Hyderabad', image:'images/property-apartment.png', badge:'Verified', featured:false, listing:'Rent', amenities:['Fully Furnished','Gym','Pool'] },
-  { id:15, title:'Premium Plot in Rajahmundry', type:'Plot / Land', bhk:'400 sq.yd', area:400, price:6000000, priceLabel:'₹60 Lakhs', location:'Morampudi, Rajahmundry', state:'Andhra Pradesh', city:'Rajahmundry', image:'images/property-plot.png', badge:'BuildMyHome™', featured:false, listing:'Buy', amenities:['RERA Approved','Near NH'] },
+  { id:16, title:'3 BHK Villa in Warangal', type:'Villa', bhk:'3 BHK', area:2400, price:9500000, priceLabel:'₹95 Lakhs', location:'Hanamkonda, Warangal', state:'Telangana', city:'Warangal', image:'images/property-villa.png', badge:'Verified', featured:true, listing:'Buy', amenities:['Garden','Parking','Vastu','Modular Kitchen'] },
+  { id:17, title:'Premium Plot in Karimnagar', type:'Plot / Land', bhk:'350 sq.yd', area:350, price:5200000, priceLabel:'₹52 Lakhs', location:'Kothirampur, Karimnagar', state:'Telangana', city:'Karimnagar', image:'images/property-plot.png', badge:'BuildMyHome™', featured:false, listing:'Buy', amenities:['DTCP Approved','Corner Plot'] },
+  { id:18, title:'Independent House in Secunderabad', type:'Independent House', bhk:'4 BHK', area:2800, price:18000000, priceLabel:'₹1.8 Cr', location:'Bowenpally, Secunderabad', state:'Telangana', city:'Secunderabad', image:'images/property-villa.png', badge:'Verified', featured:false, listing:'Buy', amenities:['Parking','Garden','Terrace'] },
 ];
 
 const TESTIMONIALS = [
   { name:'Rajesh Reddy', initials:'RR', country:'🇺🇸 USA', text:'BuildMyHome™ was a game-changer. I built my dream home in Hyderabad while living in Dallas. Weekly video updates kept me involved in every decision. The quality exceeded my expectations!', stars:5 },
   { name:'Priya Sharma', initials:'PS', country:'🇬🇧 UK', text:'I was nervous about buying property remotely, but NRI Realty Connect made it seamless. Virtual tours, legal verification, and a dedicated manager — everything was handled professionally.', stars:5 },
-  { name:'Venkat Rao', initials:'VR', country:'🇦🇪 UAE', text:'Sold my father\'s property in Vijayawada without traveling to India. The legal team handled POA, documentation, and registration perfectly. Received funds within 3 weeks of sale.', stars:5 },
+  { name:'Venkat Rao', initials:'VR', country:'🇦🇪 UAE', text:'Sold my father\'s property in Hyderabad without traveling to India. The legal team handled POA, documentation, and registration perfectly. Received funds within 3 weeks of sale.', stars:5 },
   { name:'Lakshmi Devi', initials:'LD', country:'🇸🇬 Singapore', text:'Invested in a villa plot in Shamshabad through NRI Realty Connect. The property verification report gave me complete confidence. Now using BuildMyHome™ to construct!', stars:5 },
   { name:'Anil Kumar', initials:'AK', country:'🇦🇺 Australia', text:'Their property management service is excellent. My apartment in Gachibowli has been rented out for 3 years — they handle tenants, maintenance, and send me monthly reports.', stars:4 },
 ];
@@ -68,17 +60,17 @@ const FAQS = [
 
 const CITY_DATA = [
   { name:'Hyderabad', state:'Telangana', count:'850+ Properties', color:'#1A3A5C' },
-  { name:'Visakhapatnam', state:'Andhra Pradesh', count:'320+ Properties', color:'#2A4A6C' },
-  { name:'Vijayawada', state:'Andhra Pradesh', count:'280+ Properties', color:'#0A2F4F' },
-  { name:'Warangal', state:'Telangana', count:'150+ Properties', color:'#1A3A5C' },
-  { name:'Guntur', state:'Andhra Pradesh', count:'130+ Properties', color:'#2A4A6C' },
-  { name:'Tirupati', state:'Andhra Pradesh', count:'110+ Properties', color:'#0A2F4F' },
-  { name:'Karimnagar', state:'Telangana', count:'95+ Properties', color:'#1A3A5C' },
-  { name:'Rajahmundry', state:'Andhra Pradesh', count:'80+ Properties', color:'#2A4A6C' },
-  { name:'Nizamabad', state:'Telangana', count:'75+ Properties', color:'#0A2F4F' },
-  { name:'Kurnool', state:'Andhra Pradesh', count:'70+ Properties', color:'#1A3A5C' },
+  { name:'Warangal', state:'Telangana', count:'150+ Properties', color:'#2A4A6C' },
+  { name:'Karimnagar', state:'Telangana', count:'95+ Properties', color:'#0A2F4F' },
+  { name:'Nizamabad', state:'Telangana', count:'75+ Properties', color:'#1A3A5C' },
   { name:'Khammam', state:'Telangana', count:'65+ Properties', color:'#2A4A6C' },
-  { name:'Nellore', state:'Andhra Pradesh', count:'60+ Properties', color:'#0A2F4F' },
+  { name:'Secunderabad', state:'Telangana', count:'120+ Properties', color:'#0A2F4F' },
+  { name:'Nalgonda', state:'Telangana', count:'55+ Properties', color:'#1A3A5C' },
+  { name:'Mahbubnagar', state:'Telangana', count:'50+ Properties', color:'#2A4A6C' },
+  { name:'Siddipet', state:'Telangana', count:'45+ Properties', color:'#0A2F4F' },
+  { name:'Adilabad', state:'Telangana', count:'40+ Properties', color:'#1A3A5C' },
+  { name:'Suryapet', state:'Telangana', count:'35+ Properties', color:'#2A4A6C' },
+  { name:'Ramagundam', state:'Telangana', count:'30+ Properties', color:'#0A2F4F' },
 ];
 
 // ===== PAGE LOADER =====
