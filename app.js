@@ -2,6 +2,19 @@
 // NRI REALTY CONNECT — Application Logic
 // ============================================
 
+// ===== SECURITY: Input Sanitization =====
+function sanitizeHTML(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+function sanitizeInput(input) {
+  return String(input).replace(/[<>"'&]/g, char => ({
+    '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#x27;', '&': '&amp;'
+  })[char]);
+}
+
 // ===== MOCK DATA =====
 const TELANGANA_CITIES = [
   'Hyderabad','Secunderabad','Warangal','Nizamabad','Karimnagar','Khammam',
@@ -373,8 +386,14 @@ function initContactForm() {
   if (!form) return;
   form.addEventListener('submit', e => {
     e.preventDefault();
-    const name = document.getElementById('contactName').value;
-    if (!name) return showToast('Please fill in all required fields.');
+    const name = sanitizeInput(document.getElementById('contactName').value.trim());
+    const email = sanitizeInput(document.getElementById('contactEmail').value.trim());
+    const phone = sanitizeInput(document.getElementById('contactPhone').value.trim());
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!name || !email || !phone) return showToast('Please fill in all required fields.');
+    if (!emailRegex.test(email)) return showToast('Please enter a valid email address.');
+    if (phone.length < 8) return showToast('Please enter a valid phone number.');
     showToast(`Thank you, ${name}! Your inquiry has been submitted. Our NRI specialist will contact you within 24 hours.`);
     form.reset();
   });
@@ -406,7 +425,7 @@ function initBackToTop() {
 // ===== TOAST =====
 function showToast(message) {
   const toast = document.getElementById('toast');
-  toast.textContent = message;
+  toast.textContent = sanitizeHTML(message);
   toast.classList.add('show');
   setTimeout(() => toast.classList.remove('show'), 4000);
 }
