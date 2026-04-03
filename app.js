@@ -26,21 +26,21 @@ const AP_CITIES = [];
 const ALL_CITIES = [...TELANGANA_CITIES];
 
 const PROPERTIES = [
-  { id:1, title:'Luxury 3 BHK Apartment in Gachibowli', type:'Apartment', bhk:'3 BHK', area:1850, price:14200000, priceLabel:'₹1.42 Cr', location:'Gachibowli, Hyderabad', state:'Telangana', city:'Hyderabad', image:'images/property-apartment.png', badge:'Verified', featured:true, listing:'Buy', amenities:['Pool','Gym','Parking','Garden'] },
-  { id:2, title:'Modern Villa in Jubilee Hills', type:'Villa', bhk:'4 BHK', area:3200, price:52000000, priceLabel:'₹5.2 Cr', location:'Jubilee Hills, Hyderabad', state:'Telangana', city:'Hyderabad', image:'images/property-villa.png', badge:'Featured', featured:true, listing:'Buy', amenities:['Pool','Garden','Home Theater','Parking'] },
-  { id:3, title:'Premium Plot in Shamshabad', type:'Plot / Land', bhk:'200 sq.yd', area:200, price:9600000, priceLabel:'₹96 Lakhs', location:'Shamshabad, Hyderabad', state:'Telangana', city:'Hyderabad', image:'images/property-plot.png', badge:'BuildMyHome™', featured:false, listing:'Buy', amenities:['Gated Community','Road Access'] },
-  { id:6, title:'Commercial Space in HITEC City', type:'Commercial', bhk:'2500 sft', area:2500, price:37500000, priceLabel:'₹3.75 Cr', location:'HITEC City, Hyderabad', state:'Telangana', city:'Hyderabad', image:'images/property-apartment.png', badge:'Featured', featured:true, listing:'Buy', amenities:['24/7 Security','Power Backup','Parking'] },
-  { id:7, title:'Gated Villa Plot in Warangal', type:'Plot / Land', bhk:'267 sq.yd', area:267, price:3800000, priceLabel:'₹38 Lakhs', location:'Kazipet, Warangal', state:'Telangana', city:'Warangal', image:'images/property-plot.png', badge:'BuildMyHome™', featured:false, listing:'Buy', amenities:['Gated','Avenue Plantation'] },
-  { id:8, title:'2 BHK Flat for Rent in Kondapur', type:'Apartment', bhk:'2 BHK', area:1200, price:22000, priceLabel:'₹22,000/mo', location:'Kondapur, Hyderabad', state:'Telangana', city:'Hyderabad', image:'images/property-luxury.png', badge:'Verified', featured:false, listing:'Rent', amenities:['Semi-Furnished','Gym','Parking'] },
-  { id:11, title:'Residential Plot in Nizamabad', type:'Plot / Land', bhk:'300 sq.yd', area:300, price:2700000, priceLabel:'₹27 Lakhs', location:'Armoor Road, Nizamabad', state:'Telangana', city:'Nizamabad', image:'images/property-plot.png', badge:'BuildMyHome™', featured:false, listing:'Buy', amenities:['DTCP Approved','Road Access'] },
-  { id:12, title:'Penthouse in Banjara Hills', type:'Apartment', bhk:'4 BHK', area:4200, price:85000000, priceLabel:'₹8.5 Cr', location:'Banjara Hills, Hyderabad', state:'Telangana', city:'Hyderabad', image:'images/property-luxury.png', badge:'Featured', featured:true, listing:'Buy', amenities:['Terrace Pool','Concierge','Helipad'] },
-  { id:14, title:'Furnished 2BHK in Madhapur', type:'Apartment', bhk:'2 BHK', area:1100, price:30000, priceLabel:'₹30,000/mo', location:'Madhapur, Hyderabad', state:'Telangana', city:'Hyderabad', image:'images/property-apartment.png', badge:'Verified', featured:false, listing:'Rent', amenities:['Fully Furnished','Gym','Pool'] },
-  { id:16, title:'3 BHK Villa in Warangal', type:'Villa', bhk:'3 BHK', area:2400, price:8500000, priceLabel:'₹85 Lakhs', location:'Hanamkonda, Warangal', state:'Telangana', city:'Warangal', image:'images/property-villa.png', badge:'Verified', featured:true, listing:'Buy', amenities:['Garden','Parking','Vastu','Modular Kitchen'] },
-  { id:17, title:'Premium Plot in Karimnagar', type:'Plot / Land', bhk:'350 sq.yd', area:350, price:4200000, priceLabel:'₹42 Lakhs', location:'Kothirampur, Karimnagar', state:'Telangana', city:'Karimnagar', image:'images/property-plot.png', badge:'BuildMyHome™', featured:false, listing:'Buy', amenities:['DTCP Approved','Corner Plot'] },
-  { id:18, title:'Independent House in Secunderabad', type:'Independent House', bhk:'4 BHK', area:2800, price:17500000, priceLabel:'₹1.75 Cr', location:'Bowenpally, Secunderabad', state:'Telangana', city:'Secunderabad', image:'images/property-villa.png', badge:'Verified', featured:false, listing:'Buy', amenities:['Parking','Garden','Terrace'] },
-  { id:19, title:'3 BHK Flat in Kukatpally', type:'Apartment', bhk:'3 BHK', area:1650, price:9200000, priceLabel:'₹92 Lakhs', location:'KPHB Colony, Hyderabad', state:'Telangana', city:'Hyderabad', image:'images/property-apartment.png', badge:'Verified', featured:false, listing:'Buy', amenities:['Lift','Parking','Children Play Area'] },
-  { id:20, title:'Luxury Villa in Kokapet', type:'Villa', bhk:'4 BHK', area:3500, price:45000000, priceLabel:'₹4.5 Cr', location:'Kokapet, Hyderabad', state:'Telangana', city:'Hyderabad', image:'images/property-villa.png', badge:'Featured', featured:true, listing:'Buy', amenities:['Pool','Clubhouse','Smart Home','Landscaped Garden'] },
-  { id:21, title:'3 BHK for Rent in Manikonda', type:'Apartment', bhk:'3 BHK', area:1500, price:25000, priceLabel:'₹25,000/mo', location:'Manikonda, Hyderabad', state:'Telangana', city:'Hyderabad', image:'images/property-luxury.png', badge:'Verified', featured:false, listing:'Rent', amenities:['Semi-Furnished','Gym','Community Hall'] },
+  { id:1, title:'Luxury 3 BHK Apartment in Gachibowli', type:'Apartment', bhk:'3 BHK', area:1850, price:18500000, priceLabel:'₹1.85 Cr', location:'Gachibowli, Hyderabad', state:'Telangana', city:'Hyderabad', image:'images/property-apartment.png', badge:'Verified', featured:true, listing:'Buy', amenities:['Pool','Gym','Parking','Garden'] },
+  { id:2, title:'Modern Villa in Jubilee Hills', type:'Villa', bhk:'4 BHK', area:3200, price:75000000, priceLabel:'₹7.50 Cr', location:'Jubilee Hills, Hyderabad', state:'Telangana', city:'Hyderabad', image:'images/property-villa.png', badge:'Featured', featured:true, listing:'Buy', amenities:['Pool','Garden','Home Theater','Parking'] },
+  { id:3, title:'Premium Plot in Shamshabad', type:'Plot / Land', bhk:'200 sq.yd', area:200, price:8500000, priceLabel:'₹85 Lakhs', location:'Shamshabad, Hyderabad', state:'Telangana', city:'Hyderabad', image:'images/property-plot.png', badge:'BuildMyHome™', featured:false, listing:'Buy', amenities:['Gated Community','Road Access'] },
+  { id:6, title:'Commercial Space in HITEC City', type:'Commercial', bhk:'2500 sft', area:2500, price:45000000, priceLabel:'₹4.50 Cr', location:'HITEC City, Hyderabad', state:'Telangana', city:'Hyderabad', image:'images/property-apartment.png', badge:'Featured', featured:true, listing:'Buy', amenities:['24/7 Security','Power Backup','Parking'] },
+  { id:7, title:'Gated Villa Plot in Warangal', type:'Plot / Land', bhk:'267 sq.yd', area:267, price:3200000, priceLabel:'₹32 Lakhs', location:'Kazipet, Warangal', state:'Telangana', city:'Warangal', image:'images/property-plot.png', badge:'BuildMyHome™', featured:false, listing:'Buy', amenities:['Gated','Avenue Plantation'] },
+  { id:8, title:'2 BHK Flat for Rent in Kondapur', type:'Apartment', bhk:'2 BHK', area:1200, price:35000, priceLabel:'₹35,000/mo', location:'Kondapur, Hyderabad', state:'Telangana', city:'Hyderabad', image:'images/property-luxury.png', badge:'Verified', featured:false, listing:'Rent', amenities:['Semi-Furnished','Gym','Parking'] },
+  { id:11, title:'Residential Plot in Nizamabad', type:'Plot / Land', bhk:'300 sq.yd', area:300, price:4500000, priceLabel:'₹45 Lakhs', location:'Armoor Road, Nizamabad', state:'Telangana', city:'Nizamabad', image:'images/property-plot.png', badge:'BuildMyHome™', featured:false, listing:'Buy', amenities:['DTCP Approved','Road Access'] },
+  { id:12, title:'Penthouse in Banjara Hills', type:'Apartment', bhk:'4 BHK', area:4200, price:125000000, priceLabel:'₹12.5 Cr', location:'Banjara Hills, Hyderabad', state:'Telangana', city:'Hyderabad', image:'images/property-luxury.png', badge:'Featured', featured:true, listing:'Buy', amenities:['Terrace Pool','Concierge','Helipad'] },
+  { id:14, title:'Furnished 2BHK in Madhapur', type:'Apartment', bhk:'2 BHK', area:1100, price:40000, priceLabel:'₹40,000/mo', location:'Madhapur, Hyderabad', state:'Telangana', city:'Hyderabad', image:'images/property-apartment.png', badge:'Verified', featured:false, listing:'Rent', amenities:['Fully Furnished','Gym','Pool'] },
+  { id:16, title:'3 BHK Villa in Warangal', type:'Villa', bhk:'3 BHK', area:2400, price:12000000, priceLabel:'₹1.20 Cr', location:'Hanamkonda, Warangal', state:'Telangana', city:'Warangal', image:'images/property-villa.png', badge:'Verified', featured:true, listing:'Buy', amenities:['Garden','Parking','Vastu','Modular Kitchen'] },
+  { id:17, title:'Premium Plot in Karimnagar', type:'Plot / Land', bhk:'350 sq.yd', area:350, price:6500000, priceLabel:'₹65 Lakhs', location:'Kothirampur, Karimnagar', state:'Telangana', city:'Karimnagar', image:'images/property-plot.png', badge:'BuildMyHome™', featured:false, listing:'Buy', amenities:['DTCP Approved','Corner Plot'] },
+  { id:18, title:'Independent House in Secunderabad', type:'Independent House', bhk:'4 BHK', area:2800, price:21000000, priceLabel:'₹2.10 Cr', location:'Bowenpally, Secunderabad', state:'Telangana', city:'Secunderabad', image:'images/property-villa.png', badge:'Verified', featured:false, listing:'Buy', amenities:['Parking','Garden','Terrace'] },
+  { id:19, title:'3 BHK Flat in Kukatpally', type:'Apartment', bhk:'3 BHK', area:1650, price:13500000, priceLabel:'₹1.35 Cr', location:'KPHB Colony, Hyderabad', state:'Telangana', city:'Hyderabad', image:'images/property-apartment.png', badge:'Verified', featured:false, listing:'Buy', amenities:['Lift','Parking','Children Play Area'] },
+  { id:20, title:'Luxury Villa in Kokapet', type:'Villa', bhk:'4 BHK', area:3500, price:85000000, priceLabel:'₹8.50 Cr', location:'Kokapet, Hyderabad', state:'Telangana', city:'Hyderabad', image:'images/property-villa.png', badge:'Featured', featured:true, listing:'Buy', amenities:['Pool','Clubhouse','Smart Home','Landscaped Garden'] },
+  { id:21, title:'3 BHK for Rent in Manikonda', type:'Apartment', bhk:'3 BHK', area:1500, price:30000, priceLabel:'₹30,000/mo', location:'Manikonda, Hyderabad', state:'Telangana', city:'Hyderabad', image:'images/property-luxury.png', badge:'Verified', featured:false, listing:'Rent', amenities:['Semi-Furnished','Gym','Community Hall'] },
 ];
 
 const TESTIMONIALS = [
@@ -452,4 +452,38 @@ function showToast(message) {
   toast.textContent = sanitizeHTML(message);
   toast.classList.add('show');
   setTimeout(() => toast.classList.remove('show'), 4000);
+}
+// ===== CHATBOT FUNCTIONALITY =====
+function toggleChat() {
+  const chat = document.getElementById('chatbot');
+  if(chat) {
+    chat.style.display = chat.style.display === 'flex' ? 'none' : 'flex';
+  }
+}
+
+function sendChat() {
+  const input = document.getElementById('chatInput');
+  const msgs = document.getElementById('chatMsgs');
+  if(!input || !msgs || !input.value.trim()) return;
+  
+  const userText = input.value.trim();
+  
+  // Create user message
+  const uMsg = document.createElement('div');
+  uMsg.className = 'chat-msg user-msg';
+  uMsg.textContent = userText;
+  msgs.appendChild(uMsg);
+  
+  // Clear input and scroll up 
+  input.value = '';
+  msgs.scrollTop = msgs.scrollHeight;
+  
+  // Simulate delay for bot response
+  setTimeout(() => {
+    const bMsg = document.createElement('div');
+    bMsg.className = 'chat-msg bot-msg';
+    bMsg.innerHTML = `Thanks for your inquiry! For detailed consultation and to clarify all your doubts, please contact our owner directly at <strong>+91 9052201333</strong> (Call or WhatsApp text) or send an email. We are happy to help!`;
+    msgs.appendChild(bMsg);
+    msgs.scrollTop = msgs.scrollHeight;
+  }, 800);
 }
