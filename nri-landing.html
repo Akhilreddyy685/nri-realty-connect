@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NRI Realtorz — Build Your Dream Home in India, From Anywhere</title>
+  <meta name="description" content="Build your dream home in Telangana while living abroad. Complete transparency, live construction tracking, and end-to-end management for NRIs." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #C8A96E;
+      --gold-light: #E2C89A;
+      --gold-dark: #A07840;
+      --navy: #0A1628;
+      --navy-mid: #112240;
+      --navy-light: #1E3A5F;
+      --white: #FFFFFF;
+      --off-white: #F8F6F2;
+      --text-muted: #8A9BB5;
+      --border: rgba(200,169,110,0.2);
+      --ff-display: 'Playfair Display', serif;
+      --ff-body: 'Inter', sans-serif;
+      --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--ff-body);
+      background: var(--navy);
+      color: var(--white);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* ========== NAV ========== */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+      padding: 20px 60px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(10,22,40,0.7);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      transition: all 0.3s var(--ease);
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 12px;
+      text-decoration: none;
+    }
+    .nav-logo-badge {
+      width: 40px; height: 40px; border-radius: 10px;
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--ff-display); font-size: 0.75rem; font-weight: 700;
+      color: var(--navy); letter-spacing: 0.5px;
+    }
+    .nav-logo-text {
+      font-family: var(--ff-display); font-size: 1.2rem; font-weight: 700;
+      color: var(--white);
+    }
+    .nav-logo-text span { color: var(--gold); }
+    .nav-links { display: flex; gap: 36px; align-items: center; }
+    .nav-links a {
+      color: rgba(255,255,255,0.75); text-decoration: none;
+      font-size: 0.9rem; font-weight: 500; letter-spacing: 0.3px;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta {
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+      color: var(--navy); padding: 10px 24px; border-radius: 50px;
+      text-decoration: none; font-weight: 700; font-size: 0.88rem;
+      transition: all 0.3s var(--ease); letter-spacing: 0.5px;
+    }
+    .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(200,169,110,0.4); }
+
+    /* ========== HERO ========== */
+    #hero {
+      position: relative; min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+    .hero-video-bg {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(150deg, rgba(10,22,40,0.95) 0%, rgba(17,34,64,0.75) 50%, rgba(10,22,40,0.9) 100%),
+        url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80') center/cover no-repeat;
+      z-index: 0;
+    }
+    .hero-particles {
+      position: absolute; inset: 0; z-index: 1;
+      background-image: radial-gradient(circle, rgba(200,169,110,0.15) 1px, transparent 1px);
+      background-size: 50px 50px;
+      animation: drift 20s linear infinite;
+    }
+    @keyframes drift { 0%{background-position:0 0} 100%{background-position:50px 50px} }
+
+    .hero-content {
+      position: relative; z-index: 2;
+      text-align: center; max-width: 900px; margin: 0 auto;
+      padding: 0 24px;
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: rgba(200,169,110,0.12); border: 1px solid var(--border);
+      border-radius: 50px; padding: 8px 20px;
+      font-size: 0.8rem; font-weight: 600; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--gold-light);
+      margin-bottom: 28px;
+      animation: fadeUp 1s var(--ease) both;
+    }
+    .hero-eyebrow::before {
+      content: ''; width: 6px; height: 6px;
+      border-radius: 50%; background: var(--gold);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.3)} }
+
+    .hero-headline {
+      font-family: var(--ff-display);
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      font-weight: 900; line-height: 1.1;
+      letter-spacing: -1px;
+      animation: fadeUp 1s 0.2s var(--ease) both;
+    }
+    .hero-headline .accent { color: var(--gold); font-style: italic; }
+    .hero-headline .line2 { display: block; color: rgba(255,255,255,0.85); font-size: 0.7em; font-weight: 400; margin-top: 8px; }
+
+    .hero-sub {
+      margin: 28px auto;
+      font-size: 1.15rem; color: rgba(255,255,255,0.65);
+      font-weight: 300; max-width: 600px; line-height: 1.8;
+      animation: fadeUp 1s 0.4s var(--ease) both;
+    }
+    .hero-cta-group {
+      display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+      animation: fadeUp 1s 0.6s var(--ease) both;
+    }
+    .btn-hero-primary {
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+      color: var(--navy); padding: 16px 40px; border-radius: 50px;
+      font-weight: 700; font-size: 1rem; text-decoration: none;
+      display: inline-flex; align-items: center; gap: 10px;
+      box-shadow: 0 0 40px rgba(200,169,110,0.35);
+      transition: all 0.3s var(--ease); letter-spacing: 0.3px;
+    }
+    .btn-hero-primary:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(200,169,110,0.5); }
+    .btn-hero-secondary {
+      border: 1.5px solid rgba(255,255,255,0.3); color: var(--white);
+      padding: 16px 36px; border-radius: 50px;
+      font-weight: 500; font-size: 1rem; text-decoration: none;
+      transition: all 0.3s var(--ease);
+      display: inline-flex; align-items: center; gap: 10px;
+      backdrop-filter: blur(10px);
+    }
+    .btn-hero-secondary:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+
+    .hero-stats {
+      display: flex; gap: 48px; justify-content: center;
+      margin-top: 64px; padding-top: 40px;
+      border-top: 1px solid var(--border);
+      animation: fadeUp 1s 0.8s var(--ease) both;
+    }
+    .hero-stat-num {
+      font-family: var(--ff-display); font-size: 2.4rem; font-weight: 700;
+      color: var(--gold); line-height: 1;
+    }
+    .hero-stat-label { font-size: 0.8rem; color: var(--text-muted); margin-top: 4px; letter-spacing: 0.5px; }
+
+    .hero-scroll {
+      position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      z-index: 2; animation: fadeUp 1s 1s var(--ease) both;
+    }
+    .scroll-dot {
+      width: 24px; height: 40px; border: 2px solid rgba(200,169,110,0.4);
+      border-radius: 50px; position: relative;
+    }
+    .scroll-dot::after {
+      content: ''; width: 4px; height: 8px; background: var(--gold);
+      border-radius: 2px; position: absolute; top: 6px; left: 50%; transform:translateX(-50%);
+      animation: scrollDown 2s infinite var(--ease);
+    }
+    @keyframes scrollDown { 0%{opacity:1;top:6px} 100%{opacity:0;top:22px} }
+    .scroll-label { font-size: 0.72rem; color: var(--text-muted); letter-spacing: 2px; text-transform: uppercase; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ========== SECTION BASE ========== */
+    section { padding: 120px 24px; }
+    .container { max-width: 1160px; margin: 0 auto; }
+    .section-eyebrow {
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-family: var(--ff-display);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 700; line-height: 1.15; letter-spacing: -0.5px;
+      color: var(--white);
+    }
+    .section-title .gold { color: var(--gold); font-style: italic; }
+    .section-sub {
+      font-size: 1.05rem; color: var(--text-muted);
+      max-width: 560px; line-height: 1.8; margin-top: 16px;
+    }
+
+    /* ========== PROBLEM/SOLUTION ========== */
+    #story { background: var(--navy-mid); }
+    .story-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 100px;
+      align-items: center;
+    }
+    .story-problem h2 {
+      font-family: var(--ff-display); font-size: 2rem; font-weight: 700;
+      color: var(--white); line-height: 1.3; margin-bottom: 32px;
+    }
+    .story-problem h2 em { color: rgba(255,255,255,0.4); font-style: normal; }
+    .pain-item {
+      display: flex; gap: 16px; margin-bottom: 24px; align-items: flex-start;
+    }
+    .pain-icon {
+      width: 40px; height: 40px; min-width: 40px;
+      border-radius: 10px; background: rgba(255,60,60,0.12);
+      border: 1px solid rgba(255,60,60,0.2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+    }
+    .pain-item p { font-size: 0.95rem; color: rgba(255,255,255,0.65); line-height: 1.7; }
+    .pain-item strong { color: var(--white); }
+
+    .story-divider {
+      width: 2px; background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+      height: 100%; min-height: 400px; position: relative;
+      margin: 0 auto;
+    }
+
+    .story-solution { padding-top: 40px; }
+    .solution-card {
+      background: linear-gradient(135deg, rgba(200,169,110,0.08), rgba(200,169,110,0.03));
+      border: 1px solid var(--border);
+      border-radius: 20px; padding: 28px 32px; margin-bottom: 20px;
+      display: flex; gap: 20px; align-items: flex-start;
+      transition: all 0.3s var(--ease);
+    }
+    .solution-card:hover { transform: translateX(8px); border-color: var(--gold-dark); }
+    .sol-icon {
+      width: 48px; height: 48px; min-width: 48px;
+      border-radius: 12px; background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; color: var(--navy);
+    }
+    .sol-text h4 { font-weight: 700; color: var(--white); margin-bottom: 6px; }
+    .sol-text p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; }
+
+    /* ========== FEATURES ========== */
+    #features { background: var(--navy); }
+    .features-header { text-align: center; margin-bottom: 72px; }
+    .features-header .section-sub { margin: 16px auto 0; }
+    .features-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+    }
+    .feature-card {
+      background: linear-gradient(145deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 20px; padding: 36px 28px;
+      position: relative; overflow: hidden;
+      transition: all 0.4s var(--ease);
+      cursor: default;
+    }
+    .feature-card::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(200,169,110,0.07), transparent);
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .feature-card:hover::before { opacity: 1; }
+    .feature-card:hover { transform: translateY(-8px); border-color: var(--border); }
+    .feature-card-icon {
+      width: 56px; height: 56px; border-radius: 16px;
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; margin-bottom: 24px;
+      transition: transform 0.3s var(--ease);
+    }
+    .feature-card:hover .feature-card-icon { transform: scale(1.1) rotate(-5deg); }
+    .feature-card h3 { font-weight: 700; font-size: 1.05rem; margin-bottom: 12px; color: var(--white); }
+    .feature-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; }
+    .feature-card .tag {
+      display: inline-block; margin-top: 16px;
+      background: rgba(200,169,110,0.1); color: var(--gold);
+      padding: 4px 12px; border-radius: 50px; font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    /* ========== PROCESS ========== */
+    #process { background: var(--navy-mid); }
+    .process-header { text-align: center; margin-bottom: 80px; }
+    .process-header .section-sub { margin: 16px auto 0; }
+    .process-steps {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+      position: relative;
+    }
+    .process-steps::before {
+      content: ''; position: absolute;
+      top: 36px; left: 16.67%; right: 16.67%;
+      height: 2px;
+      background: linear-gradient(to right, var(--gold-dark), var(--gold), var(--gold-dark));
+      z-index: 0;
+    }
+    .process-step { text-align: center; padding: 0 24px; position: relative; z-index: 1; }
+    .step-num {
+      width: 72px; height: 72px; border-radius: 50%;
+      border: 2px solid var(--gold);
+      background: var(--navy-mid);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 28px;
+      font-family: var(--ff-display); font-size: 1.5rem; font-weight: 700;
+      color: var(--gold);
+      transition: all 0.3s var(--ease);
+      position: relative;
+    }
+    .process-step:hover .step-num {
+      background: var(--gold);
+      color: var(--navy);
+      transform: scale(1.1);
+      box-shadow: 0 0 30px rgba(200,169,110,0.4);
+    }
+    .step-icon {
+      font-size: 1.6rem; display: block;
+      margin-bottom: 20px;
+    }
+    .process-step h3 { font-weight: 700; font-size: 1.05rem; margin-bottom: 10px; color: var(--white); }
+    .process-step p { font-size: 0.87rem; color: var(--text-muted); line-height: 1.7; }
+
+    /* ========== TRACKER PREVIEW ========== */
+    #tracker { background: var(--navy); }
+    .tracker-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .tracker-ui {
+      background: var(--navy-mid);
+      border: 1px solid var(--border);
+      border-radius: 24px; overflow: hidden;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.4);
+    }
+    .tracker-header {
+      background: linear-gradient(135deg, var(--navy-light), var(--navy-mid));
+      padding: 20px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+    }
+    .tracker-header h4 { font-weight: 700; font-size: 0.95rem; color: var(--white); }
+    .tracker-badge {
+      background: rgba(50,205,100,0.15); border: 1px solid rgba(50,205,100,0.3);
+      color: #32CD64; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 600;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .tracker-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #32CD64; animation: pulse 1.5s infinite; }
+    .tracker-body { padding: 24px; }
+    .progress-bar-wrap { margin-bottom: 20px; }
+    .progress-bar-label { display: flex; justify-content: space-between; margin-bottom: 8px; }
+    .progress-bar-label span { font-size: 0.82rem; color: var(--text-muted); }
+    .progress-bar-label strong { color: var(--gold); font-size: 0.88rem; }
+    .progress-bar {
+      height: 6px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%; border-radius: 3px;
+      background: linear-gradient(to right, var(--gold-dark), var(--gold));
+      animation: fillBar 2s var(--ease) both;
+    }
+    @keyframes fillBar { from { width: 0 } }
+    .milestone-list { display: flex; flex-direction: column; gap: 12px; margin-top: 20px; }
+    .milestone {
+      display: flex; align-items: center; gap: 14px;
+      padding: 12px 16px; border-radius: 12px;
+      background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
+    }
+    .milestone-dot {
+      width: 32px; height: 32px; border-radius: 50%; min-width: 32px;
+      display: flex; align-items: center; justify-content: center; font-size: 0.8rem;
+    }
+    .milestone-dot.done { background: rgba(50,205,100,0.15); color: #32CD64; }
+    .milestone-dot.active { background: rgba(200,169,110,0.2); color: var(--gold); animation: pulse 2s infinite; }
+    .milestone-dot.pending { background: rgba(255,255,255,0.05); color: var(--text-muted); }
+    .milestone-text span { font-size: 0.85rem; font-weight: 600; color: var(--white); display: block; }
+    .milestone-text small { font-size: 0.75rem; color: var(--text-muted); }
+
+    /* ========== TESTIMONIALS ========== */
+    #testimonials { background: var(--navy-mid); }
+    .testimonials-header { text-align: center; margin-bottom: 64px; }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .testimonial-card {
+      background: linear-gradient(145deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 24px; padding: 36px 32px;
+      transition: all 0.4s var(--ease);
+      position: relative;
+    }
+    .testimonial-card:hover { transform: translateY(-6px); border-color: var(--border); }
+    .testimonial-card::before {
+      content: '"'; font-family: var(--ff-display); font-size: 8rem; line-height: 1;
+      color: rgba(200,169,110,0.08); position: absolute; top: -10px; left: 24px;
+    }
+    .testimonial-stars {
+      color: var(--gold); font-size: 0.9rem; margin-bottom: 20px; letter-spacing: 2px;
+    }
+    .testimonial-text {
+      font-size: 0.95rem; color: rgba(255,255,255,0.8); line-height: 1.8;
+      font-style: italic; margin-bottom: 28px;
+    }
+    .testimonial-author { display: flex; align-items: center; gap: 14px; }
+    .author-avatar {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--ff-display); font-weight: 700; font-size: 1rem; color: var(--navy);
+    }
+    .author-name { font-weight: 700; font-size: 0.9rem; color: var(--white); }
+    .author-loc { font-size: 0.78rem; color: var(--text-muted); margin-top: 2px; }
+    .author-flag { font-size: 1rem; }
+
+    /* ========== CTA ========== */
+    #cta {
+      background: linear-gradient(135deg, var(--navy-mid), var(--navy));
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    #cta::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 80% at 50% 50%, rgba(200,169,110,0.08), transparent);
+    }
+    .cta-content { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
+    .cta-title {
+      font-family: var(--ff-display);
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 900; line-height: 1.1; margin-bottom: 24px;
+    }
+    .cta-title span { color: var(--gold); font-style: italic; }
+    .cta-sub { font-size: 1.1rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 48px; }
+    .cta-form {
+      display: flex; gap: 12px; max-width: 480px; margin: 0 auto 24px;
+    }
+    .cta-form input {
+      flex: 1; padding: 16px 24px; border-radius: 50px;
+      border: 1.5px solid var(--border); background: rgba(255,255,255,0.05);
+      color: var(--white); font-size: 0.95rem; outline: none;
+      transition: border-color 0.3s;
+    }
+    .cta-form input::placeholder { color: var(--text-muted); }
+    .cta-form input:focus { border-color: var(--gold); }
+    .cta-form button {
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+      color: var(--navy); border: none; border-radius: 50px;
+      padding: 16px 32px; font-weight: 700; font-size: 0.95rem;
+      cursor: pointer; white-space: nowrap;
+      transition: all 0.3s var(--ease);
+    }
+    .cta-form button:hover { box-shadow: 0 8px 30px rgba(200,169,110,0.45); transform: translateY(-2px); }
+    .cta-trust {
+      display: flex; gap: 32px; justify-content: center; flex-wrap: wrap;
+      font-size: 0.82rem; color: var(--text-muted);
+    }
+    .cta-trust span { display: flex; align-items: center; gap: 6px; }
+    .cta-trust span::before { content: '✓'; color: var(--gold); font-weight: 700; }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background: #060F1C; padding: 48px 60px 32px;
+      border-top: 1px solid var(--border);
+    }
+    .footer-inner {
+      max-width: 1160px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;
+    }
+    .footer-copy { font-size: 0.82rem; color: var(--text-muted); }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { font-size: 0.82rem; color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
+    .footer-links a:hover { color: var(--gold); }
+
+    /* ========== REVEAL ANIMATIONS ========== */
+    .reveal {
+      opacity: 0; transform: translateY(40px);
+      transition: all 0.8s var(--ease);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-left { opacity: 0; transform: translateX(-40px); transition: all 0.8s var(--ease); }
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
+    .reveal-right { opacity: 0; transform: translateX(40px); transition: all 0.8s var(--ease); }
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 1024px) {
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+      .story-grid { grid-template-columns: 1fr; gap: 60px; }
+      .tracker-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+      .process-steps::before { display: none; }
+      nav { padding: 16px 24px; }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 768px) {
+      section { padding: 80px 20px; }
+      footer { padding: 32px 20px; }
+      .features-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr; }
+      .cta-form { flex-direction: column; }
+      .hero-stats { gap: 24px; flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-badge">NRI</div>
+    <div class="nav-logo-text">NRI <span>Realtorz</span></div>
+  </a>
+  <div class="nav-links">
+    <a href="#story">Our Story</a>
+    <a href="#features">Features</a>
+    <a href="#process">Process</a>
+    <a href="#tracker">Tracker</a>
+    <a href="#testimonials">Clients</a>
+  </div>
+  <a href="#cta" class="nav-cta">Book Consultation</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-video-bg"></div>
+  <div class="hero-particles"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Trusted by 5,000+ NRI Families Worldwide</div>
+    <h1 class="hero-headline">
+      Build Your Dream Home in India —
+      <em class="accent">Without Being There.</em>
+      <span class="line2">Every brick. Every milestone. Fully in your control.</span>
+    </h1>
+    <p class="hero-sub">
+      The only platform that lets you build, track, and own a premium home in Telangana — remotely, transparently, and without stress.
+    </p>
+    <div class="hero-cta-group">
+      <a href="#cta" class="btn-hero-primary">
+        Start Building Now
+        <span>→</span>
+      </a>
+      <a href="#process" class="btn-hero-secondary">
+        ▶ See How It Works
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">500+</div>
+        <div class="hero-stat-label">Homes Delivered</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">25+</div>
+        <div class="hero-stat-label">Countries Served</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">100%</div>
+        <div class="hero-stat-label">On-Time Delivery</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">₹0</div>
+        <div class="hero-stat-label">Hidden Charges</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-dot"></div>
+    <span class="scroll-label">Scroll</span>
+  </div>
+</section>
+
+<!-- PROBLEM / SOLUTION -->
+<section id="story">
+  <div class="container">
+    <div class="story-grid">
+      <!-- Problem -->
+      <div class="story-problem reveal-left">
+        <div class="section-eyebrow">The NRI Reality</div>
+        <h2>You Own a Plot in India. <em>But Building It Feels Impossible.</em></h2>
+        <div class="pain-item">
+          <div class="pain-icon">😟</div>
+          <p><strong>You can't be there</strong> to supervise construction, check quality, or handle contractors — from the US, UK, or UAE.</p>
+        </div>
+        <div class="pain-item">
+          <div class="pain-icon">💸</div>
+          <p><strong>Contractors overcharge</strong> and cut corners when no one's watching. You've heard too many horror stories.</p>
+        </div>
+        <div class="pain-item">
+          <div class="pain-icon">📄</div>
+          <p><strong>Legal paperwork</strong> — permits, approvals, RERA compliance — is a maze you can't navigate from abroad.</p>
+        </div>
+        <div class="pain-item">
+          <div class="pain-icon">📵</div>
+          <p><strong>Radio silence</strong> from builders for weeks. No updates. No photos. No accountability.</p>
+        </div>
+      </div>
+
+      <!-- Solution -->
+      <div class="story-solution reveal-right">
+        <div class="section-eyebrow">The NRI Realtorz Way</div>
+        <h2 class="section-title" style="margin-bottom:32px">We Are Your<br><span class="gold">Boots on the Ground.</span></h2>
+        <div class="solution-card">
+          <div class="sol-icon">📹</div>
+          <div class="sol-text">
+            <h4>Live Video Updates — Every Week</h4>
+            <p>Watch your home get built in real-time. Weekly HD video reports from site, sent directly to your phone.</p>
+          </div>
+        </div>
+        <div class="solution-card">
+          <div class="sol-icon">🛡️</div>
+          <div class="sol-text">
+            <h4>Fixed Prices. Zero Surprises.</h4>
+            <p>Transparent cost breakdowns before work starts. What we quote is what you pay — signed and guaranteed.</p>
+          </div>
+        </div>
+        <div class="solution-card">
+          <div class="sol-icon">⚖️</div>
+          <div class="sol-text">
+            <h4>We Handle All Legal Paperwork</h4>
+            <p>Building permits, GHMC approvals, RERA compliance — our legal team manages every document on your behalf.</p>
+          </div>
+        </div>
+        <div class="solution-card">
+          <div class="sol-icon">👤</div>
+          <div class="sol-text">
+            <h4>Your Dedicated Project Manager</h4>
+            <p>One point of contact. Always reachable. On WhatsApp, phone, or video call — in your time zone.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="container">
+    <div class="features-header reveal">
+      <div class="section-eyebrow">Platform Features</div>
+      <h2 class="section-title">Everything You Need,<br><span class="gold">Nothing You Don't.</span></h2>
+      <p class="section-sub">Built specifically for NRIs who want to invest in India without the distance being a problem.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <div class="feature-card-icon">📡</div>
+        <h3>Live Construction Tracking</h3>
+        <p>Real-time dashboard showing progress milestones, photos, and videos — updated daily from the construction site.</p>
+        <span class="tag">Live Updates</span>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-card-icon">💰</div>
+        <h3>Transparent Pricing</h3>
+        <p>Itemized cost sheets before work begins. Standard: ₹2,499/sqft. Premium: ₹3,499. Ultra Luxury: ₹4,499.</p>
+        <span class="tag">No Hidden Costs</span>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-card-icon">🏗️</div>
+        <h3>End-to-End Management</h3>
+        <p>From architects and contractors to interiors and handover — one team handles your entire project.</p>
+        <span class="tag">Turnkey</span>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-card-icon">⚖️</div>
+        <h3>Legal & Documentation</h3>
+        <p>Building permits, GHMC approvals, RERA registration, Power of Attorney support — all managed for you.</p>
+        <span class="tag">Fully Compliant</span>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-card-icon">🎥</div>
+        <h3>Virtual Site Visits</h3>
+        <p>Schedule a live video walkthrough of your site anytime. See exactly what's happening — from anywhere in the world.</p>
+        <span class="tag">HD Video Calls</span>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-card-icon">🛋️</div>
+        <h3>Premium Interiors</h3>
+        <p>Modular kitchens, Italian marble, smart home automation — fully customizable interiors designed virtually.</p>
+        <span class="tag">From ₹590/sqft</span>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-card-icon">💳</div>
+        <h3>Overseas Payments</h3>
+        <p>Pay from your international bank account via wire transfer, NRE/NRO account, or secure payment gateway.</p>
+        <span class="tag">Multi-Currency</span>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-card-icon">🔒</div>
+        <h3>Secure & Verified</h3>
+        <p>RERA-registered platform with verified builders, legal title checks, and escrow-protected payments.</p>
+        <span class="tag">RERA Certified</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="container">
+    <div class="process-header reveal">
+      <div class="section-eyebrow">How It Works</div>
+      <h2 class="section-title">6 Steps From <span class="gold">Plot to Keys</span></h2>
+      <p class="section-sub">A clear, proven process — designed so you never feel lost, even from 10,000 miles away.</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step reveal">
+        <div class="step-num">01</div>
+        <span class="step-icon">📞</span>
+        <h3>Free Consultation</h3>
+        <p>Share your plot details, vision, and budget with our NRI specialist. A detailed proposal arrives within 7 days.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-num">02</div>
+        <span class="step-icon">📐</span>
+        <h3>Design & 3D Plans</h3>
+        <p>Receive stunning 3D renders and floor plans. Make unlimited revisions until you're 100% in love with the design.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-num">03</div>
+        <span class="step-icon">📋</span>
+        <h3>Permits & Approvals</h3>
+        <p>We handle all government permits, GHMC approvals, and RERA compliance — you sign nothing complex.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-num">04</div>
+        <span class="step-icon">🏗️</span>
+        <h3>Construction Begins</h3>
+        <p>Our vetted builders start construction. You receive weekly HD video reports and a live milestone dashboard.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-num">05</div>
+        <span class="step-icon">🔍</span>
+        <h3>Quality Inspections</h3>
+        <p>Independent third-party quality checks at every milestone. Detailed photo and video reports shared with you.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-num">06</div>
+        <span class="step-icon">🔑</span>
+        <h3>Handover & Registry</h3>
+        <p>Virtual final walkthrough, completion certificate, property registration — all handled. Keys delivered.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRACKER PREVIEW -->
+<section id="tracker">
+  <div class="container">
+    <div class="tracker-grid">
+      <div class="reveal-left">
+        <div class="section-eyebrow">Live Dashboard</div>
+        <h2 class="section-title">Watch Your Home<br>Get Built — <span class="gold">Live.</span></h2>
+        <p class="section-sub" style="margin-bottom:32px">Log in from Dubai, New York, or London and see exactly what's happening on your plot in Hyderabad — right now.</p>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:14px;">
+          <li style="display:flex;align-items:center;gap:12px;color:rgba(255,255,255,0.75);font-size:0.92rem;">
+            <span style="color:var(--gold);font-size:1.1rem">✓</span> Real-time progress percentage
+          </li>
+          <li style="display:flex;align-items:center;gap:12px;color:rgba(255,255,255,0.75);font-size:0.92rem;">
+            <span style="color:var(--gold);font-size:1.1rem">✓</span> Daily site photos uploaded by our team
+          </li>
+          <li style="display:flex;align-items:center;gap:12px;color:rgba(255,255,255,0.75);font-size:0.92rem;">
+            <span style="color:var(--gold);font-size:1.1rem">✓</span> Milestone completion notifications
+          </li>
+          <li style="display:flex;align-items:center;gap:12px;color:rgba(255,255,255,0.75);font-size:0.92rem;">
+            <span style="color:var(--gold);font-size:1.1rem">✓</span> Material quality reports at each stage
+          </li>
+          <li style="display:flex;align-items:center;gap:12px;color:rgba(255,255,255,0.75);font-size:0.92rem;">
+            <span style="color:var(--gold);font-size:1.1rem">✓</span> Direct message your project manager
+          </li>
+        </ul>
+      </div>
+      <div class="reveal-right">
+        <div class="tracker-ui">
+          <div class="tracker-header">
+            <h4>🏠 Sharma Residence — Gachibowli</h4>
+            <div class="tracker-badge">Live</div>
+          </div>
+          <div class="tracker-body">
+            <div class="progress-bar-wrap">
+              <div class="progress-bar-label">
+                <span>Overall Progress</span>
+                <strong>68% Complete</strong>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width:68%"></div>
+              </div>
+            </div>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar-label">
+                <span>Budget Used</span>
+                <strong>₹52L / ₹78L</strong>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width:67%;background:linear-gradient(to right,#4A90E2,#7BB3F0)"></div>
+              </div>
+            </div>
+            <div class="milestone-list">
+              <div class="milestone">
+                <div class="milestone-dot done">✓</div>
+                <div class="milestone-text">
+                  <span>Foundation & Plinth</span>
+                  <small>Completed Feb 14, 2026</small>
+                </div>
+              </div>
+              <div class="milestone">
+                <div class="milestone-dot done">✓</div>
+                <div class="milestone-text">
+                  <span>Ground Floor Structure</span>
+                  <small>Completed Mar 10, 2026</small>
+                </div>
+              </div>
+              <div class="milestone">
+                <div class="milestone-dot active">⚙</div>
+                <div class="milestone-text">
+                  <span>First Floor & Roof Slab</span>
+                  <small>In Progress — 72% done</small>
+                </div>
+              </div>
+              <div class="milestone">
+                <div class="milestone-dot pending">○</div>
+                <div class="milestone-text">
+                  <span>Interiors & Finishing</span>
+                  <small>Scheduled June 2026</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <div class="testimonials-header reveal">
+      <div class="section-eyebrow">Client Stories</div>
+      <h2 class="section-title">NRIs Who Built Their<br><span class="gold">Dream Homes Remotely.</span></h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"I built a 2,400 sq ft villa in Jubilee Hills while living in Dubai. I never had to visit India once during the entire construction. The weekly video updates kept me completely at peace."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">RK</div>
+          <div>
+            <div class="author-name">Rajesh Kumar <span class="author-flag">🇦🇪</span></div>
+            <div class="author-loc">Dubai, UAE · Villa in Jubilee Hills</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"After being cheated by a local contractor, I found NRI Realtorz. The transparency was night and day. Fixed pricing, legal support, and a PM who answered at 11pm my time. Highly recommend."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">SP</div>
+          <div>
+            <div class="author-name">Sunita Patel <span class="author-flag">🇺🇸</span></div>
+            <div class="author-loc">New Jersey, USA · Independent House in Warangal</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"The construction tracker dashboard is genuinely incredible. I watched my home's foundation being poured from my living room in London. Delivered on time and exactly as promised."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">AM</div>
+          <div>
+            <div class="author-name">Arun Mehta <span class="author-flag">🇬🇧</span></div>
+            <div class="author-loc">London, UK · Premium Villa in Kokapet</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="container">
+    <div class="cta-content reveal">
+      <div class="section-eyebrow">Get Started Today</div>
+      <h2 class="cta-title">Your Home in India<br>Starts with <span>One Call.</span></h2>
+      <p class="cta-sub">Book a free 30-minute consultation with our NRI specialist. No commitment. No sales pressure. Just clarity on how to build your dream home — from wherever you are.</p>
+      <form class="cta-form" onsubmit="handleCTA(event)">
+        <input type="tel" id="ctaPhone" placeholder="+1 (609) 555-0000" />
+        <button type="submit">Book Free Call →</button>
+      </form>
+      <div class="cta-trust">
+        <span>No commitment required</span>
+        <span>Free consultation</span>
+        <span>Response within 2 hours</span>
+        <span>RERA certified builders</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-copy">© 2026 NRI Realtorz. All rights reserved. | Hyderabad, Telangana.</div>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="tel:+919052201333">+91 90522 01333</a>
+      <a href="mailto:amarender.gade@gmail.com">Email Us</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => io.observe(el));
+
+  // Navbar scroll effect
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('navbar');
+    if (window.scrollY > 60) {
+      nav.style.background = 'rgba(10,22,40,0.97)';
+      nav.style.padding = '14px 60px';
+    } else {
+      nav.style.background = 'rgba(10,22,40,0.7)';
+      nav.style.padding = '20px 60px';
+    }
+  });
+
+  // Animated stat counters
+  function animateCount(el, target, suffix = '') {
+    let start = 0;
+    const duration = 2200;
+    const step = () => {
+      const progress = Math.min((Date.now() - startTime) / duration, 1);
+      const ease = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.floor(ease * target) + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    const startTime = Date.now();
+    requestAnimationFrame(step);
+  }
+
+  const statsSection = document.querySelector('.hero-stats');
+  const statsObs = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) {
+      const nums = document.querySelectorAll('.hero-stat-num');
+      animateCount(nums[0], 500, '+');
+      animateCount(nums[1], 25, '+');
+      nums[2].textContent = '100%';
+      nums[3].textContent = '₹0';
+      statsObs.disconnect();
+    }
+  }, { threshold: 0.5 });
+  statsObs.observe(statsSection);
+
+  // CTA Handler
+  function handleCTA(e) {
+    e.preventDefault();
+    const phone = document.getElementById('ctaPhone').value.trim();
+    if (!phone) { alert('Please enter your phone number.'); return; }
+    const btn = e.target.querySelector('button');
+    btn.textContent = '✓ Request Received!';
+    btn.style.background = 'linear-gradient(135deg, #2D8C4E, #32CD64)';
+    setTimeout(() => {
+      btn.textContent = 'Book Free Call →';
+      btn.style.background = '';
+      document.getElementById('ctaPhone').value = '';
+    }, 3000);
+  }
+</script>
+</body>
+</html>
