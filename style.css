@@ -768,4 +768,45 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .footer-grid { grid-template-columns: 1fr; }
   .modal { max-height: 95vh; }
   .chatbot-container { width: calc(100vw - 32px); right: 16px; }
+  .props-mode-tabs { gap: 6px; flex-wrap: wrap; }
+  .props-mode-tab { padding: 8px 14px; font-size: 0.78rem; }
 }
+
+/* ===== PROPERTIES PAGE MODE TABS ===== */
+.props-page-header {
+  background: #fff;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  padding: 28px 32px 0;
+  margin-bottom: 32px;
+  border: 1px solid var(--border);
+}
+.props-mode-tabs {
+  display: flex;
+  gap: 8px;
+  border-top: 1px solid var(--border);
+  margin: 24px -32px 0;
+  padding: 0 32px;
+  overflow-x: auto;
+}
+.props-mode-tab {
+  padding: 12px 22px;
+  border: none;
+  background: none;
+  font-family: var(--font-primary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -1px;
+  white-space: nowrap;
+  transition: all var(--transition);
+}
+.props-mode-tab:hover   { color: var(--primary); border-bottom-color: var(--border); }
+.props-mode-tab.active  { color: var(--primary); border-bottom-color: var(--accent); }
+.props-mode-sell        { color: var(--accent-dark) !important; }
+.props-mode-sell:hover  { border-bottom-color: var(--accent-dark) !important; }
+
+#propsUploadBar { border-radius: var(--radius-lg); overflow: hidden; }
+

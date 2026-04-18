@@ -149,42 +149,6 @@
       <p class="hero-subtitle">Buy, Sell, Rent, or Build — with zero brokerage, live tracking, and complete transparency.</p>
       <div class="hero-slide-label" id="heroSlideLabel">🏡 Premium Villas</div>
 
-      <!-- SEARCH PANEL — Fixed 4-mode tabs -->
-      <div class="hero-search">
-        <div class="search-tabs">
-          <button class="search-tab active" data-type="build">🏗️ Build My Home</button>
-          <button class="search-tab" data-type="buy">🏠 Buy</button>
-          <button class="search-tab" data-type="rent">🔑 Rent</button>
-          <button class="search-tab" data-type="sell">💰 Sell / Upload</button>
-        </div>
-        <div id="heroBuildStrip" style="display:flex;align-items:center;gap:16px;padding:16px 20px;background:linear-gradient(135deg,#061529,#0A1F3F);flex-wrap:wrap">
-          <span style="font-size:1.6rem">🏗️</span>
-          <div style="flex:1;min-width:200px"><div style="color:#fff;font-weight:700;font-size:0.95rem;margin-bottom:3px">BuildMyHome™ — Our #1 NRI Priority</div><div style="color:rgba(255,255,255,0.6);font-size:0.82rem">Own a plot in Telangana? We design, permit, build &amp; hand over — from ₹2,499/sqft</div></div>
-          <a href="#buildmyhome" data-page="buildmyhome" style="background:linear-gradient(135deg,#A8894E,#C8A96E);color:#061529;padding:12px 24px;border-radius:50px;font-weight:700;font-size:0.88rem;white-space:nowrap;text-decoration:none">Explore BuildMyHome™ →</a>
-        </div>
-        <div id="heroSearchBar" style="display:none">
-          <div class="search-bar">
-            <input type="text" id="heroSearchInput" placeholder="Search Hyderabad, Kokapet, Jubilee Hills...">
-            <select id="heroSearchType"><option value="">All Types</option><option>Apartment</option><option>Villa</option><option>Independent House</option><option>Plot / Land</option><option>Commercial</option></select>
-            <select id="heroCityFilter"><option value="">All Cities</option><option>Hyderabad</option><option>Warangal</option><option>Karimnagar</option><option>Nizamabad</option><option>Khammam</option><option>Secunderabad</option></select>
-            <button class="search-btn" id="heroSearchBtn">🔍 Search Properties</button>
-          </div>
-        </div>
-        <div id="heroUploadStrip" style="display:none;flex-direction:column">
-          <div style="display:flex;align-items:center;gap:14px;padding:14px 20px;background:#fffbf4;flex-wrap:wrap">
-            <span style="font-size:1.4rem">📤</span>
-            <p id="uploadStripLabel" style="flex:1;font-size:0.875rem;color:#4B5563;margin:0;min-width:200px"><strong style="color:#1A1A2E">Upload photos, videos &amp; documents</strong> — reach 50,000+ NRI buyers. Free listing.</p>
-            <button id="uploadStripBtn" onclick="openUploadModal('sell')" style="background:linear-gradient(135deg,#A8894E,#C8A96E);color:#061529;padding:11px 24px;border-radius:50px;font-weight:700;font-size:0.85rem;border:none;cursor:pointer;white-space:nowrap">List for Sale →</button>
-          </div>
-          <div style="display:flex;align-items:center;gap:10px;padding:12px 20px;background:#f9fafb;border-top:1px solid #e5e7eb;flex-wrap:wrap">
-            <label for="heroFileClip" style="display:flex;align-items:center;gap:8px;padding:9px 18px;border:2px dashed #C8A96E;border-radius:12px;cursor:pointer;font-size:0.82rem;font-weight:600;color:#A8894E;background:#fffbf4;white-space:nowrap">📸 Attach Photos &amp; Videos<input type="file" id="heroFileClip" multiple accept="image/*,video/*" style="display:none" onchange="handleHeroClip(this.files)"></label>
-            <label for="heroDocClip" style="display:flex;align-items:center;gap:8px;padding:9px 18px;border:2px dashed #9CA3AF;border-radius:12px;cursor:pointer;font-size:0.82rem;font-weight:600;color:#6B7280;background:#fff;white-space:nowrap">📄 Upload Documents (PDF)<input type="file" id="heroDocClip" multiple accept="application/pdf,.doc,.docx" style="display:none" onchange="handleHeroClip(this.files)"></label>
-            <div id="heroClipPreviews" style="display:flex;gap:8px;flex-wrap:wrap;align-items:center"></div>
-            <span style="font-size:0.72rem;color:#9CA3AF;margin-left:auto">JPG · PNG · MP4 · PDF — max 50MB</span>
-          </div>
-        </div>
-      </div>
-      </div>
     </div>
 
     <div class="hero-stats">
@@ -452,27 +416,65 @@
 <!-- ==================== PROPERTIES PAGE ==================== -->
 <div class="page" id="page-properties">
   <section style="padding-top:100px">
+  <section style="padding-top:90px; background:#F8F9FF">
     <div class="container">
-      <div class="section-header" style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px">
-        <div>
-          <span class="section-badge">Property Listings</span>
-          <h2 class="section-title">Find Your Perfect Property</h2>
-          <p class="section-subtitle">Verified listings across 12 Telangana cities</p>
+      <!-- Properties page header with full filter tabs -->
+      <div class="props-page-header">
+        <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:28px">
+          <div>
+            <span class="section-badge">Property Listings</span>
+            <h2 class="section-title" style="margin-top:8px">Find Your Perfect Property</h2>
+            <p class="section-subtitle">Verified listings across 12 Telangana cities — Zero brokerage</p>
+          </div>
+          <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <button class="btn-accent" onclick="openUploadModal('sell')" style="padding:12px 22px;font-size:0.875rem;border-radius:50px">📤 List for Sale</button>
+            <button class="btn-outline" onclick="openUploadModal('rent')" style="padding:12px 22px;font-size:0.875rem;border-radius:50px">🔑 List for Rent</button>
+          </div>
         </div>
-        <div style="display:flex;gap:12px">
-          <button class="btn-accent" onclick="openUploadModal('sell')" style="padding:12px 24px;font-size:0.875rem">📤 List Property</button>
+
+        <!-- MODE TABS: Build / Buy / Rent / Sell -->
+        <div class="props-mode-tabs">
+          <button class="props-mode-tab active" data-mode="all" onclick="filterByMode(this,'all')">🏠 All</button>
+          <button class="props-mode-tab" data-mode="Build" onclick="filterByMode(this,'Build')">🏗️ Build My Home</button>
+          <button class="props-mode-tab" data-mode="Buy" onclick="filterByMode(this,'Buy')">💎 Buy</button>
+          <button class="props-mode-tab" data-mode="Rent" onclick="filterByMode(this,'Rent')">🔑 Rent</button>
+          <button class="props-mode-tab props-mode-sell" data-mode="sell-upload" onclick="openUploadModal('sell')">📤 Sell / Upload</button>
+        </div>
+
+        <!-- Upload clip bar — shown when Sell/Rent tab clicked via JS -->
+        <div id="propsUploadBar" style="display:none;flex-direction:column;border:1.5px solid #C8A96E;border-radius:16px;overflow:hidden;margin:16px 0">
+          <div style="display:flex;align-items:center;gap:14px;padding:14px 20px;background:#fffbf4;flex-wrap:wrap">
+            <span style="font-size:1.4rem">📤</span>
+            <p id="propsUploadLabel" style="flex:1;font-size:0.875rem;color:#4B5563;margin:0;min-width:200px"><strong style="color:#1A1A2E">Upload photos, videos &amp; documents</strong> — reach 50,000+ NRI buyers. Free listing.</p>
+            <button id="propsUploadBtn" onclick="openUploadModal('sell')" style="background:linear-gradient(135deg,#A8894E,#C8A96E);color:#061529;padding:11px 24px;border-radius:50px;font-weight:700;font-size:0.85rem;border:none;cursor:pointer;white-space:nowrap">Open Listing Form →</button>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;padding:12px 20px;background:#f9fafb;border-top:1px solid #f0e8d8;flex-wrap:wrap">
+            <label for="propsFileClip" style="display:flex;align-items:center;gap:8px;padding:9px 18px;border:2px dashed #C8A96E;border-radius:12px;cursor:pointer;font-size:0.82rem;font-weight:600;color:#A8894E;background:#fffbf4;white-space:nowrap">
+              📸 Attach Photos &amp; Videos
+              <input type="file" id="propsFileClip" multiple accept="image/*,video/*" style="display:none" onchange="handleHeroClip(this.files)">
+            </label>
+            <label for="propsDocClip" style="display:flex;align-items:center;gap:8px;padding:9px 18px;border:2px dashed #9CA3AF;border-radius:12px;cursor:pointer;font-size:0.82rem;font-weight:600;color:#6B7280;background:#fff;white-space:nowrap">
+              📄 Upload Documents (PDF)
+              <input type="file" id="propsDocClip" multiple accept="application/pdf,.doc,.docx" style="display:none" onchange="handleHeroClip(this.files)">
+            </label>
+            <div id="propsClipPreviews" style="display:flex;gap:8px;flex-wrap:wrap;align-items:center"></div>
+            <span style="font-size:0.72rem;color:#9CA3AF;margin-left:auto">JPG · PNG · MP4 · PDF — max 50MB each</span>
+          </div>
+        </div>
+
+        <!-- SEARCH + FILTER BAR -->
+        <div class="filters-bar" id="filtersBar">
+          <div class="filters-row">
+            <div class="filter-group"><label>Listing</label><select id="filterListing"><option value="">Buy / Rent</option><option>Buy</option><option>Rent</option></select></div>
+            <div class="filter-group"><label>City</label><select id="filterCity"><option value="">All Cities</option></select></div>
+            <div class="filter-group"><label>Property Type</label><select id="filterType"><option value="">All Types</option><option>Apartment</option><option>Villa</option><option>Independent House</option><option>Plot / Land</option><option>Commercial</option></select></div>
+            <div class="filter-group"><label>Budget (₹)</label><select id="filterBudget"><option value="">Any Budget</option><option value="0-3000000">Up to ₹30L</option><option value="3000000-7500000">₹30L – ₹75L</option><option value="7500000-15000000">₹75L – ₹1.5Cr</option><option value="15000000-50000000">₹1.5Cr – ₹5Cr</option><option value="50000000-999999999">₹5Cr+</option></select></div>
+            <button class="search-btn filter-btn" id="applyFilters">🔍 Search</button>
+          </div>
         </div>
       </div>
-      <div class="filters-bar" id="filtersBar">
-        <div class="filters-row">
-          <div class="filter-group"><label>Listing</label><select id="filterListing"><option value="">Buy / Rent</option><option>Buy</option><option>Rent</option></select></div>
-          <div class="filter-group"><label>City</label><select id="filterCity"><option value="">All Cities</option></select></div>
-          <div class="filter-group"><label>Property Type</label><select id="filterType"><option value="">All Types</option><option>Apartment</option><option>Villa</option><option>Independent House</option><option>Plot / Land</option><option>Commercial</option></select></div>
-          <div class="filter-group"><label>Budget (₹)</label><select id="filterBudget"><option value="">Any Budget</option><option value="0-3000000">Up to ₹30L</option><option value="3000000-7500000">₹30L – ₹75L</option><option value="7500000-15000000">₹75L – ₹1.5Cr</option><option value="15000000-50000000">₹1.5Cr – ₹5Cr</option><option value="50000000-999999999">₹5Cr+</option></select></div>
-          <div class="filter-group"><label>State</label><select id="filterState"><option value="">Telangana</option><option>Telangana</option></select></div>
-          <button class="search-btn filter-btn" id="applyFilters">Apply Filters</button>
-        </div>
-      </div>
+      <div class="properties-grid" id="allPropertiesGrid"></div>
+      <p id="noResults" style="display:none;text-align:center;padding:40px;color:#9CA3AF;font-size:1rem">No properties match your search. Try adjusting your filters.</p>
       <div class="properties-grid" id="allPropertiesGrid"></div>
       <p id="noResults">No properties match your filters. Try adjusting your criteria.</p>
     </div>

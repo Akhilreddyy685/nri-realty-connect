@@ -172,75 +172,51 @@ function initNavigation() {
 }
 
 /* ============================================================
-   HERO TAB SYSTEM — Build / Buy / Rent / Sell
-   Fixed: tabs correctly switch modes, Sell+Rent show upload bar
+   PROPERTIES PAGE — Mode Tabs (Build / Buy / Rent / Sell)
    ============================================================ */
-function initHeroTabs() {
-  const tabs        = document.querySelectorAll('.search-tab');
-  const searchBar   = document.getElementById('heroSearchBar');
-  const uploadStrip = document.getElementById('heroUploadStrip');
-  const buildStrip  = document.getElementById('heroBuildStrip');
-  const searchBtn   = document.getElementById('heroSearchBtn');
-  const searchInput = document.getElementById('heroSearchInput');
+window.filterByMode = function(btn, mode) {
+  // Update active tab
+  document.querySelectorAll('.props-mode-tab').forEach(t => t.classList.remove('active'));
+  if (btn) btn.classList.add('active');
 
-  function switchTab(type) {
-    currentTab = type;
+  const uploadBar = document.getElementById('propsUploadBar');
+  const label     = document.getElementById('propsUploadLabel');
+  const uploadBtn = document.getElementById('propsUploadBtn');
 
-    // Update active state
-    tabs.forEach(t => t.classList.toggle('active', t.dataset.type === type));
+  // Hide upload bar by default
+  if (uploadBar) uploadBar.style.display = 'none';
 
-    // Reset all strips
-    searchBar   && (searchBar.style.display   = 'none');
-    uploadStrip && (uploadStrip.style.display = 'none');
-    buildStrip  && (buildStrip.style.display  = 'none');
-
-    if (type === 'build') {
-      buildStrip && (buildStrip.style.display = 'flex');
-    } else if (type === 'sell' || type === 'rent') {
-      uploadStrip && (uploadStrip.style.display = 'flex');
-      // Update label
-      const label = document.getElementById('uploadStripLabel');
-      if (label) {
-        label.textContent = type === 'sell'
-          ? '📤 Upload photos, videos & documents to list your property for SALE'
-          : '🔑 Upload photos, videos & documents to list your property for RENT';
-      }
-      const uploadBtn = document.getElementById('uploadStripBtn');
-      if (uploadBtn) {
-        uploadBtn.textContent = type === 'sell' ? 'List for Sale →' : 'List for Rent →';
-        uploadBtn.onclick = () => openUploadModal(type);
-      }
-    } else {
-      // Buy
-      searchBar && (searchBar.style.display = 'flex');
-    }
+  if (mode === 'Build') {
+    // Navigate to BuildMyHome page
+    history.pushState({ page: 'buildmyhome' }, '', '#buildmyhome');
+    showPage('buildmyhome');
+    return;
+  } else if (mode === 'sell-upload') {
+    // Show inline upload bar for sell
+    if (uploadBar)  uploadBar.style.display  = 'flex';
+    if (label)      label.innerHTML = '<strong style="color:#1A1A2E">Upload photos, videos &amp; documents</strong> — reach 50,000+ NRI buyers. Free listing.';
+    if (uploadBtn)  { uploadBtn.textContent = 'Open Listing Form (Sale) →'; uploadBtn.onclick = () => openUploadModal('sell'); }
+    return;
+  } else if (mode === 'Rent') {
+    // Show rent listing modal directly
+    openUploadModal('rent');
+    return;
   }
 
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => switchTab(tab.dataset.type));
-  });
+  // Buy or All — filter properties
+  const listing = mode === 'Buy' ? 'Buy' : '';
+  const filterEl = document.getElementById('filterListing');
+  if (filterEl) filterEl.value = listing;
+  renderProperties(getFilteredProperties());
+};
 
-  // Default: show build
-  switchTab('build');
-
-  // Search button
-  searchBtn?.addEventListener('click', () => {
-    if (currentTab === 'build') {
-      history.pushState({ page: 'buildmyhome' }, '', '#buildmyhome');
-      showPage('buildmyhome');
-      return;
-    }
-    const q = (searchInput?.value || '').toLowerCase().trim();
-    const listing = currentTab === 'buy' ? 'Buy' : 'Rent';
-    const filtered = PROPERTIES.filter(p =>
-      p.listing === listing &&
-      (!q || p.title.toLowerCase().includes(q) || p.location.toLowerCase().includes(q))
-    );
-    history.pushState({ page: 'properties' }, '', '#properties');
-    showPage('properties');
-    renderProperties(filtered.length ? filtered : PROPERTIES.filter(p => p.listing === listing));
-  });
+/* ============================================================
+   HERO SEARCH — simplified (no tabs, just CTA buttons)
+   ============================================================ */
+function initHeroTabs() {
+  // No-op: hero tabs removed, logic moved to properties page
 }
+
 
 /* ============================================================
    HERO CAROUSEL — 15 second rotation
