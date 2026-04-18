@@ -149,7 +149,7 @@
       <p class="hero-subtitle">Buy, Sell, Rent, or Build — with zero brokerage, live tracking, and complete transparency.</p>
       <div class="hero-slide-label" id="heroSlideLabel">🏡 Premium Villas</div>
 
-      <!-- SEARCH BAR -->
+      <!-- SEARCH PANEL — Fixed 4-mode tabs -->
       <div class="hero-search">
         <div class="search-tabs">
           <button class="search-tab active" data-type="build">🏗️ Build My Home</button>
@@ -157,26 +157,33 @@
           <button class="search-tab" data-type="rent">🔑 Rent</button>
           <button class="search-tab" data-type="sell">💰 Sell / Upload</button>
         </div>
-        <div class="search-bar">
-          <input type="text" id="heroSearchInput" placeholder="Search Hyderabad, Warangal, Kokapet, Jubilee Hills...">
-          <select id="heroSearchType">
-            <option value="">All Types</option>
-            <option>Apartment</option><option>Villa</option>
-            <option>Independent House</option><option>Plot / Land</option>
-            <option>Commercial</option>
-          </select>
-          <select id="heroCityFilter">
-            <option value="">All Cities</option>
-            <option>Hyderabad</option><option>Warangal</option>
-            <option>Karimnagar</option><option>Nizamabad</option>
-            <option>Khammam</option><option>Secunderabad</option>
-          </select>
-          <button class="search-btn" id="heroSearchBtn">🔍 Search</button>
+        <div id="heroBuildStrip" style="display:flex;align-items:center;gap:16px;padding:16px 20px;background:linear-gradient(135deg,#061529,#0A1F3F);flex-wrap:wrap">
+          <span style="font-size:1.6rem">🏗️</span>
+          <div style="flex:1;min-width:200px"><div style="color:#fff;font-weight:700;font-size:0.95rem;margin-bottom:3px">BuildMyHome™ — Our #1 NRI Priority</div><div style="color:rgba(255,255,255,0.6);font-size:0.82rem">Own a plot in Telangana? We design, permit, build &amp; hand over — from ₹2,499/sqft</div></div>
+          <a href="#buildmyhome" data-page="buildmyhome" style="background:linear-gradient(135deg,#A8894E,#C8A96E);color:#061529;padding:12px 24px;border-radius:50px;font-weight:700;font-size:0.88rem;white-space:nowrap;text-decoration:none">Explore BuildMyHome™ →</a>
         </div>
-        <div class="upload-prompt" id="uploadPrompt">
-          <p><strong>Want to sell or rent your Telangana property?</strong> Upload photos and details — reach 50,000+ NRI buyers.</p>
-          <button class="btn-upload-quick" onclick="openUploadModal('sell')">📤 Upload & List Now</button>
+        <div id="heroSearchBar" style="display:none">
+          <div class="search-bar">
+            <input type="text" id="heroSearchInput" placeholder="Search Hyderabad, Kokapet, Jubilee Hills...">
+            <select id="heroSearchType"><option value="">All Types</option><option>Apartment</option><option>Villa</option><option>Independent House</option><option>Plot / Land</option><option>Commercial</option></select>
+            <select id="heroCityFilter"><option value="">All Cities</option><option>Hyderabad</option><option>Warangal</option><option>Karimnagar</option><option>Nizamabad</option><option>Khammam</option><option>Secunderabad</option></select>
+            <button class="search-btn" id="heroSearchBtn">🔍 Search Properties</button>
+          </div>
         </div>
+        <div id="heroUploadStrip" style="display:none;flex-direction:column">
+          <div style="display:flex;align-items:center;gap:14px;padding:14px 20px;background:#fffbf4;flex-wrap:wrap">
+            <span style="font-size:1.4rem">📤</span>
+            <p id="uploadStripLabel" style="flex:1;font-size:0.875rem;color:#4B5563;margin:0;min-width:200px"><strong style="color:#1A1A2E">Upload photos, videos &amp; documents</strong> — reach 50,000+ NRI buyers. Free listing.</p>
+            <button id="uploadStripBtn" onclick="openUploadModal('sell')" style="background:linear-gradient(135deg,#A8894E,#C8A96E);color:#061529;padding:11px 24px;border-radius:50px;font-weight:700;font-size:0.85rem;border:none;cursor:pointer;white-space:nowrap">List for Sale →</button>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;padding:12px 20px;background:#f9fafb;border-top:1px solid #e5e7eb;flex-wrap:wrap">
+            <label for="heroFileClip" style="display:flex;align-items:center;gap:8px;padding:9px 18px;border:2px dashed #C8A96E;border-radius:12px;cursor:pointer;font-size:0.82rem;font-weight:600;color:#A8894E;background:#fffbf4;white-space:nowrap">📸 Attach Photos &amp; Videos<input type="file" id="heroFileClip" multiple accept="image/*,video/*" style="display:none" onchange="handleHeroClip(this.files)"></label>
+            <label for="heroDocClip" style="display:flex;align-items:center;gap:8px;padding:9px 18px;border:2px dashed #9CA3AF;border-radius:12px;cursor:pointer;font-size:0.82rem;font-weight:600;color:#6B7280;background:#fff;white-space:nowrap">📄 Upload Documents (PDF)<input type="file" id="heroDocClip" multiple accept="application/pdf,.doc,.docx" style="display:none" onchange="handleHeroClip(this.files)"></label>
+            <div id="heroClipPreviews" style="display:flex;gap:8px;flex-wrap:wrap;align-items:center"></div>
+            <span style="font-size:0.72rem;color:#9CA3AF;margin-left:auto">JPG · PNG · MP4 · PDF — max 50MB</span>
+          </div>
+        </div>
+      </div>
       </div>
     </div>
 
